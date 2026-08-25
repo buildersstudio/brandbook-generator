@@ -27,12 +27,13 @@ Your brand never leaves your machine unless you publish it.
 
 ## In this repo
 
-- `index.html` — the landing page for the tool
-- `demo/index.html` — a full demo brandbook for **Arden**, a fictional venture (all six
-  chapters: Logo, Colors, Typography, Spacing & Layout, Photography, Messaging)
+The site at the root is what the tool produces — the **Builders Studio brandbook**, generated
+from our own brand, one chapter per page:
+
+- `index.html` — overview and chapter index
+- `logo.html` · `colors.html` · `typography.html` · `spacing.html` · `photography.html` · `messaging.html`
+- `tutorial.html` — how to use the tool on your own brand
+- `style.css` / `toolbar.js` — the shared shell and the floating toolkit bar
+  (the same bar every Builders toolkit tool mounts)
 
 The generator skill (schema, extraction workflow, renderer, publish flow) lands next.
-
-## Status
-
-Early. Landing + demo brandbook are done; the generation pipeline is in progress.

@@ -1,0 +1,240 @@
+/* Builders brandbook — shared shell. Same design language as the LinkedIn post generator. */
+
+* { margin:0; padding:0; box-sizing:border-box }
+:root {
+  --bg:#0e0f10; --panel:#141516; --panel2:#17181a; --line:#26282b; --line2:#2e3134;
+  --txt:#e9ebee; --mut:#6b7075; --mut2:#9aa0a6; --soft:#c7cace;
+  --deep:#05060C; --cream:#FAF7F2; --bink:#101015;
+  --studio:#8193FF; --network:#E986B4; --capital:#D4A574; --green:#4AEEB0;
+}
+body { background:var(--bg); color:var(--txt); font-family:Inter,system-ui,sans-serif;
+       -webkit-font-smoothing:antialiased }
+a { color:inherit }
+
+/* brand type helpers */
+.xb    { font-family:'Favorit XB','Inter',system-ui,sans-serif; letter-spacing:-.022em }
+.fav   { font-family:'Favorit','Inter',system-ui,sans-serif }
+.serif { font-family:'Instrument Serif',Georgia,serif; font-style:italic }
+.kick  { font-family:'DM Mono',ui-monospace,monospace; text-transform:uppercase; letter-spacing:.3em }
+
+/* ---------- layout: fixed sidebar + one chapter per page ---------- */
+.shell { display:grid; grid-template-columns:236px 1fr; min-height:100vh }
+aside { position:sticky; top:0; height:100vh; border-right:1px solid var(--line);
+        padding:26px 18px; display:flex; flex-direction:column; gap:4px; overflow-y:auto }
+aside .lbl { font-size:11px; font-weight:600; letter-spacing:.14em; text-transform:uppercase;
+             color:var(--mut); margin-bottom:10px }
+aside .vlogo { margin-bottom:22px } aside .vlogo img { height:16px; display:block }
+aside nav { display:flex; flex-direction:column; gap:2px }
+aside nav a { display:block; padding:8px 10px; border-radius:8px; font-size:13px; font-weight:500;
+              color:var(--mut2); text-decoration:none; transition:color .14s, background .14s }
+aside nav a:hover { color:#fff; background:rgba(255,255,255,.05) }
+aside nav a.on { color:#fff; background:rgba(255,255,255,.08) }
+aside nav .div { height:1px; background:var(--line); margin:12px 2px }
+aside .foot { margin-top:auto; padding-top:18px; border-top:1px solid var(--line);
+              font-size:11.5px; color:var(--mut); line-height:1.6 }
+aside .foot a { color:var(--soft); text-decoration:none }
+aside .foot a:hover { color:#fff }
+
+main { padding:56px 48px 150px; max-width:1020px; min-width:0 }
+
+/* ---------- chapter scaffolding ---------- */
+.sec-lbl { font-size:11px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:var(--mut) }
+h1 { font-size:28px; font-weight:400; letter-spacing:-.022em; color:#fff; margin:10px 0 6px;
+     font-family:'Favorit XB','Inter',sans-serif }
+.sec-sub { color:var(--mut2); font-size:13.5px; line-height:1.65; max-width:560px; margin-bottom:32px }
+h3 { font-size:11px; font-weight:600; letter-spacing:.16em; text-transform:uppercase;
+     color:var(--mut); margin:36px 0 14px }
+.card { background:var(--panel); border:1px solid var(--line); border-radius:12px }
+
+/* prev / next chapter footer */
+.pager { display:flex; justify-content:space-between; margin-top:64px; gap:14px }
+.pager a { flex:1; border:1px solid var(--line); border-radius:12px; padding:14px 18px;
+           text-decoration:none; transition:border-color .16s }
+.pager a:hover { border-color:#3a3d40 }
+.pager a.next { text-align:right }
+.pager .pk { font-size:10.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--mut); display:block; margin-bottom:5px }
+.pager .pt { font-size:13.5px; font-weight:600; color:var(--soft) }
+
+/* ---------- shared components ---------- */
+.grid-2 { display:grid; grid-template-columns:1fr 1fr; gap:14px }
+.grid-3 { display:grid; grid-template-columns:repeat(3,1fr); gap:14px }
+
+.rule-card { padding:18px 20px; font-size:13.5px; color:var(--soft); line-height:1.65 }
+
+.dd { display:grid; grid-template-columns:1fr 1fr; gap:14px }
+.dd .card { padding:18px 20px }
+.dd .h { font-size:11px; letter-spacing:.14em; text-transform:uppercase; font-weight:650; margin-bottom:12px }
+.dd .do .h { color:var(--green) } .dd .dont .h { color:#ff4d5a }
+.dd ul { list-style:none; display:flex; flex-direction:column; gap:9px }
+.dd li { font-size:13px; color:var(--soft); line-height:1.5; padding-left:20px; position:relative }
+.dd .do li::before { content:'✓'; position:absolute; left:0; color:var(--green); font-size:12px }
+.dd .dont li::before { content:'✕'; position:absolute; left:0; color:#ff4d5a; font-size:12px }
+
+.kv { width:100%; border-collapse:collapse }
+.kv td { border-top:1px solid var(--line); padding:12px 14px; font-size:13px }
+.kv tr:first-child td { border-top:none }
+.kv .k { color:var(--mut); width:160px; font-weight:600; font-size:11px; letter-spacing:.1em; text-transform:uppercase }
+.kv .v { color:var(--soft); line-height:1.6 }
+
+.note { padding:14px 18px; font-size:12.5px; color:var(--mut2); line-height:1.6;
+        border:1px solid var(--line); border-radius:10px; background:var(--panel2); margin-top:8px }
+
+code.cmd { display:block; font-family:'DM Mono',ui-monospace,monospace; font-size:12px; color:var(--soft);
+        background:var(--bg); border:1px solid var(--line); border-radius:8px; padding:13px 15px;
+        line-height:1.7; white-space:pre; overflow-x:auto }
+
+/* ---------- overview ---------- */
+.hero { border:1px solid var(--line); border-radius:16px; overflow:hidden;
+        background:var(--deep) url('assets/grad-solid-ls.png') center/cover no-repeat;
+        padding:72px 56px 60px; position:relative }
+.hero::after { content:''; position:absolute; inset:0;
+        background:linear-gradient(180deg, rgba(5,6,12,.45) 0%, rgba(5,6,12,.2) 45%, rgba(5,6,12,.78) 100%) }
+.hero > * { position:relative; z-index:1 }
+.hero .kick { font-size:11px; color:rgba(250,247,242,.75) }
+.hero img.wm { height:34px; display:block; margin:22px 0 16px }
+.hero p { font-family:'Favorit','Inter',sans-serif; font-size:17px; color:rgba(250,247,242,.85);
+        max-width:520px; line-height:1.55 }
+.hero p em { font-family:'Instrument Serif',Georgia,serif; font-style:italic; font-size:1.12em }
+.meta-row { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-top:14px }
+.meta-row .card { padding:18px 20px }
+.meta-row .k { font-size:10.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--mut);
+        margin-bottom:7px; font-family:'DM Mono',monospace }
+.meta-row .v { font-size:13.5px; color:var(--soft); line-height:1.55 }
+.meta-row .v a { text-decoration:none; color:var(--studio) } .meta-row .v a:hover { text-decoration:underline }
+.toc { display:grid; grid-template-columns:repeat(3,1fr); gap:14px }
+.toc a { border:1px solid var(--line); background:var(--panel); border-radius:12px; padding:20px;
+        text-decoration:none; transition:border-color .16s; display:block }
+.toc a:hover { border-color:#3a3d40 }
+.toc .tn { font-size:10.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--mut);
+        font-family:'DM Mono',monospace; display:block; margin-bottom:9px }
+.toc .tt { font-size:15px; font-weight:600; color:#fff; display:block; margin-bottom:5px }
+.toc .td { font-size:12px; color:var(--mut2); line-height:1.55; display:block }
+
+/* ---------- logo ---------- */
+.logo-tile { border-radius:12px; border:1px solid var(--line); overflow:hidden }
+.logo-tile .stage { height:150px; display:flex; align-items:center; justify-content:center }
+.logo-tile .stage img { height:20px }
+.logo-tile .cap { padding:12px 16px; border-top:1px solid var(--line); background:var(--panel);
+        font-size:12px; color:var(--mut2); display:flex; justify-content:space-between; align-items:center }
+.logo-tile .cap b { color:var(--soft); font-weight:600 }
+.spark { width:34px; height:34px; color:var(--cream) }
+.spark path { fill:currentColor }
+
+/* ---------- colors ---------- */
+.cgroup { margin-bottom:26px }
+.cgroup .gname { font-size:14px; font-weight:600; color:#fff; margin-bottom:4px }
+.cgroup .gdesc { font-size:12.5px; color:var(--mut2); margin-bottom:12px }
+.swatches { display:grid; grid-template-columns:repeat(auto-fill,minmax(170px,1fr)); gap:12px }
+.sw { border:1px solid var(--line); border-radius:12px; overflow:hidden; background:var(--panel) }
+.sw .chip { height:76px }
+.sw .info { padding:11px 13px }
+.sw .nm { font-size:12.5px; font-weight:600; color:var(--soft) }
+.sw .hx { font-family:'DM Mono',monospace; font-size:11px; color:var(--mut); margin-top:3px }
+.sw .use { font-size:11px; color:var(--mut); margin-top:6px; line-height:1.5 }
+.phases { display:flex; border-radius:10px; overflow:hidden; border:1px solid var(--line); height:52px }
+.phases i { flex:1; display:block }
+
+/* ---------- typography ---------- */
+.font-card { padding:20px; border:1px solid var(--line); border-radius:12px; background:var(--panel) }
+.font-card .role { font-size:10.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--mut);
+        font-family:'DM Mono',monospace }
+.font-card .fname { font-size:19px; font-weight:650; color:#fff; margin:9px 0 2px }
+.font-card .spec { font-size:26px; margin:12px 0 6px; color:var(--soft) }
+.font-card .stack { font-family:'DM Mono',monospace; font-size:10.5px; color:var(--mut); line-height:1.6; word-break:break-all }
+.scale-t { width:100%; border-collapse:collapse }
+.scale-t td { border-top:1px solid var(--line); padding:13px 14px; vertical-align:baseline }
+.scale-t tr:first-child td { border-top:none }
+.scale-t .tn { font-family:'DM Mono',monospace; font-size:11.5px; color:var(--mut2); white-space:nowrap }
+.scale-t .tv { font-family:'DM Mono',monospace; font-size:11px; color:var(--mut); white-space:nowrap }
+.scale-t .tp { color:#fff; overflow:hidden; white-space:nowrap; text-overflow:ellipsis; max-width:0; width:99% }
+.pair { padding:34px 36px; background:var(--cream) !important }
+.pair .pk { font-family:'DM Mono',monospace; text-transform:uppercase; letter-spacing:.3em; font-size:11px;
+        color:rgba(16,16,21,.5); margin-bottom:14px }
+.pair .ph { font-family:'Favorit XB','Inter',sans-serif; font-size:30px; letter-spacing:-.022em;
+        color:var(--bink); line-height:1.1; margin-bottom:12px }
+.pair .ph em { font-family:'Instrument Serif',Georgia,serif; font-style:italic; font-weight:400; letter-spacing:-.01em }
+.pair .pb { font-family:'Favorit','Inter',sans-serif; font-size:14.5px; color:rgba(16,16,21,.62);
+        line-height:1.6; max-width:540px }
+
+/* ---------- spacing ---------- */
+.tok-t { width:100%; border-collapse:collapse }
+.tok-t td { border-top:1px solid var(--line); padding:11px 14px; font-size:12.5px }
+.tok-t tr:first-child td { border-top:none }
+.tok-t .tn { font-family:'DM Mono',monospace; color:var(--soft); width:90px }
+.tok-t .tv { font-family:'DM Mono',monospace; color:var(--mut); width:210px }
+.tok-t .bar { height:14px; background:var(--studio); border-radius:3px }
+.rad-demo { width:44px; height:32px; background:var(--panel2); border:1px solid var(--line2) }
+.sh-demo { width:56px; height:30px; background:#fff; border-radius:6px }
+.three { display:grid; grid-template-columns:1fr 1fr 1fr; gap:14px; align-items:start }
+.three .card { padding:6px 4px }
+.three h3 { margin:12px 14px }
+
+/* ---------- photography ---------- */
+.photos { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-bottom:8px }
+.photo { border-radius:12px; border:1px solid var(--line); height:170px; position:relative; overflow:hidden }
+.photo img { width:100%; height:100%; object-fit:cover; display:block }
+.photo .tag { position:absolute; left:10px; bottom:10px; background:rgba(10,11,10,.82); backdrop-filter:blur(6px);
+      font-size:10px; letter-spacing:.12em; color:rgba(255,255,255,.88); padding:4px 9px; border-radius:100px;
+      border:1px solid rgba(255,255,255,.16); font-family:'DM Mono',monospace; text-transform:uppercase }
+.faces { display:grid; grid-template-columns:repeat(4,1fr); gap:14px }
+.face { border-radius:12px; border:1px solid var(--line); aspect-ratio:1; overflow:hidden }
+.face img { width:100%; height:100%; object-fit:cover; display:block }
+.accents { display:flex; gap:12px; flex-wrap:wrap }
+.accent { display:flex; align-items:center; gap:10px; border:1px solid var(--line); background:var(--panel);
+      border-radius:100px; padding:7px 14px 7px 8px; font-size:12.5px; color:var(--soft) }
+.accent i { width:22px; height:22px; border-radius:50%; display:block }
+.accent code { font-family:'DM Mono',monospace; font-size:10.5px; color:var(--mut) }
+.sigs { display:grid; grid-template-columns:repeat(4,1fr); gap:12px }
+.sig { border:1px solid var(--line); background:var(--panel); border-radius:12px; padding:16px 16px 14px }
+.sig b { display:block; font-size:12.5px; color:var(--soft); font-weight:600; margin-bottom:5px }
+.sig span { font-size:11.5px; color:var(--mut); line-height:1.5; display:block }
+
+/* ---------- messaging ---------- */
+.voice { padding:22px 24px }
+.voice .vp { font-family:'Favorit XB','Inter',sans-serif; font-size:20px; letter-spacing:-.015em;
+      color:#fff; margin-bottom:8px }
+.voice .vs { font-size:13px; color:var(--mut2); line-height:1.65 }
+.ap { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:14px }
+.ap .card { padding:16px 18px }
+.ap .h { font-size:10.5px; letter-spacing:.14em; text-transform:uppercase; font-weight:650; margin-bottom:10px }
+.ap .avoid .h { color:#ff4d5a } .ap .prefer .h { color:var(--green) }
+.pill-list { display:flex; flex-wrap:wrap; gap:8px }
+.pill-list span { border:1px solid var(--line2); background:var(--panel2); border-radius:100px;
+      padding:6px 12px; font-size:12px; color:var(--soft) }
+.formula { padding:22px 24px }
+.formula .f { font-family:'DM Mono',monospace; font-size:13px; color:var(--studio); margin-bottom:12px }
+.formula .ex { font-family:'Favorit XB','Inter',sans-serif; font-size:19px; color:#fff;
+      line-height:1.35; letter-spacing:-.015em; padding:14px 16px; background:var(--bg);
+      border:1px solid var(--line); border-radius:10px }
+.formula .ex em { font-family:'Instrument Serif',Georgia,serif; font-style:italic; letter-spacing:-.01em }
+.formula .g { font-size:12.5px; color:var(--mut2); line-height:1.6; margin-top:12px }
+.formula .g b { color:var(--soft); font-weight:600 }
+.claims { display:grid; grid-template-columns:repeat(3,1fr); gap:12px }
+.claim { border:1px solid var(--line); background:var(--panel); border-radius:12px; padding:18px }
+.claim .st { font-family:'Favorit XB','Inter',sans-serif; font-size:26px; color:#fff; letter-spacing:-.02em }
+.claim .lb { font-size:11.5px; color:var(--mut2); margin-top:6px; line-height:1.5 }
+.heads { display:flex; flex-direction:column; gap:10px }
+.heads .hx { border:1px solid var(--line); background:var(--panel); border-radius:10px; padding:15px 18px;
+      font-family:'Favorit XB','Inter',sans-serif; font-size:16px; letter-spacing:-.015em; color:var(--soft) }
+.heads .hx em { font-family:'Instrument Serif',Georgia,serif; font-style:italic; letter-spacing:-.01em }
+
+/* ---------- tutorial ---------- */
+.tut-step { display:flex; gap:16px; border:1px solid var(--line); background:var(--panel);
+      border-radius:12px; padding:20px; margin-bottom:12px }
+.tut-step .n { flex:none; width:28px; height:28px; border-radius:50%; border:1px solid var(--line2);
+      color:var(--mut2); font-size:12.5px; font-weight:700; display:flex; align-items:center;
+      justify-content:center; font-family:'DM Mono',monospace }
+.tut-step .b { min-width:0; flex:1 }
+.tut-step h4 { font-size:14.5px; font-weight:650; color:#fff; margin-bottom:6px }
+.tut-step p { font-size:13px; color:var(--mut2); line-height:1.65 }
+.tut-step p + p { margin-top:8px }
+.tut-step code.cmd { margin-top:10px }
+.tut-step .say { font-size:13px; color:var(--soft); background:var(--bg); border:1px solid var(--line);
+      border-radius:8px; padding:11px 14px; margin-top:10px; line-height:1.6 }
+.tut-step .say::before { content:'› '; color:var(--mut) }
+
+@media (max-width:900px){
+  .shell { grid-template-columns:1fr } aside { display:none } main { padding:36px 22px 140px }
+  .grid-2,.grid-3,.meta-row,.three,.toc,.sigs,.photos,.claims,.dd,.ap { grid-template-columns:1fr }
+  .faces { grid-template-columns:1fr 1fr }
+}

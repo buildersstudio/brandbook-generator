@@ -1,0 +1,66 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to use — Brandbook Generator</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400..700&family=DM+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  /* Favorit is licensed — loaded from builders.studio (CORS open), never vendored here. */
+  @font-face { font-family:'Favorit XB'; src:url('https://builders.studio/fonts/FavoritStd-BoldExpanded.otf') format('opentype'); font-display:swap }
+  @font-face { font-family:'Favorit'; src:url('https://builders.studio/fonts/FavoritStd-Book.otf') format('opentype'); font-display:swap }
+</style>
+<link rel="stylesheet" href="style.css">
+</head><body>
+<div class="shell">
+  <aside>
+    <div class="lbl">Brandbook</div>
+    <div class="vlogo"><img src="assets/builders-logo-white.svg" alt="Builders wordmark"></div>
+    <nav>
+      <a href="index.html">Overview</a>
+      <a href="logo.html">Logo</a>
+      <a href="colors.html">Colors</a>
+      <a href="typography.html">Typography</a>
+      <a href="spacing.html">Spacing & Layout</a>
+      <a href="photography.html">Photography</a>
+      <a href="messaging.html">Messaging</a>
+      <div class="div"></div>
+      <a href="tutorial.html" class="on">How to use</a>
+    </nav>
+    <div class="foot">Generated with Brandbook Generator<br>by Builders Studio · v1</div>
+  </aside>
+  <main>
+    <div class="sec-lbl">Brandbook Generator</div>
+    <h1>How to use</h1>
+    <p class="sec-sub">This site is what the tool produces. The tool itself is this repo — it runs inside Claude Code on your machine, and your brand never leaves it unless you publish.</p>
+    <div class="tut-step"><div class="n">1</div><div class="b">
+      <h4>Clone the repo</h4>
+      <p>You need <a href="https://claude.com/claude-code" target="_blank" rel="noopener" style="color:var(--studio);text-decoration:none">Claude Code</a> installed. Then:</p>
+      <code class="cmd">git clone https://github.com/buildersstudio/brandbook-generator.git
+cd brandbook-generator
+claude</code>
+    </div></div>
+    <div class="tut-step"><div class="n">2</div><div class="b">
+      <h4>Point it at your brand</h4>
+      <p>Tell Claude what carries your brand — a website, a pitch deck, a folder of screenshots and logos. Anything works as input.</p>
+      <div class="say">My website is acme.example — build my brandbook.</div>
+    </div></div>
+    <div class="tut-step"><div class="n">3</div><div class="b">
+      <h4>Let it distill</h4>
+      <p>Claude extracts your logo, palette, type system, spacing, photography style, and voice, writes them into one structured <span style="font-family:'DM Mono',monospace;font-size:11.5px">brand-book.json</span>, and renders a site like this one — in your colors and your type.</p>
+    </div></div>
+    <div class="tut-step"><div class="n">4</div><div class="b">
+      <h4>Iterate in plain words</h4>
+      <p>React to what you see and Claude edits the book.</p>
+      <div class="say">The green is wrong — use the darker one from our logo. And our voice is warmer than this.</div>
+    </div></div>
+    <div class="tut-step"><div class="n">5</div><div class="b">
+      <h4>Publish it</h4>
+      <p>The book lives on localhost by default. When you're ready, ask Claude to publish it to a public link — Vercel or GitHub Pages — so your team and your tools can point at it.</p>
+      <div class="say">Publish my brandbook so I can share it.</div>
+    </div></div>
+    <h3>Why publish</h3>
+    <div class="card rule-card">A published brandbook becomes the source of truth every tool in the Builders toolkit reads from — generate a LinkedIn post and it already knows your colors, your fonts, your voice, and which claims are real. It is also your marketing repository: one link that answers every “what's our hex / font / tagline” question.</div>
+
+  </main>
+</div>
+<script src="toolbar.js" defer></script>
+</body></html>

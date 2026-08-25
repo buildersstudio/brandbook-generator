@@ -1,0 +1,486 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Arden — Brandbook</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400..700&family=JetBrains+Mono:wght@400..600&family=Space+Grotesk:wght@400..700&display=swap" rel="stylesheet">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box }
+  :root {
+    --bg:#0e0f10; --panel:#141516; --panel2:#17181a; --line:#26282b; --line2:#2e3134;
+    --txt:#e9ebee; --mut:#6b7075; --mut2:#9aa0a6; --soft:#c7cace;
+    --arden:#2F6B4F; --lichen:#A7C4A0; --sand:#E9E4D8; --amber:#E0A438; --ink:#101512;
+  }
+  body { background:var(--bg); color:var(--txt); font-family:Inter,system-ui,sans-serif;
+         -webkit-font-smoothing:antialiased; }
+  a { color:inherit }
+
+  /* ---------- layout: fixed sidebar + content ---------- */
+  .shell { display:grid; grid-template-columns:236px 1fr; min-height:100vh }
+  aside { position:sticky; top:0; height:100vh; border-right:1px solid var(--line);
+          padding:26px 18px; display:flex; flex-direction:column; gap:4px; overflow-y:auto }
+  aside .lbl { font-size:11px; font-weight:600; letter-spacing:.14em; text-transform:uppercase;
+               color:var(--mut); margin-bottom:4px }
+  aside .vname { font-size:19px; font-weight:650; letter-spacing:-.02em; color:#fff;
+                 font-family:'Space Grotesk',Inter,sans-serif; margin-bottom:18px;
+                 display:flex; align-items:center; gap:10px }
+  aside .vname .dot { width:22px; height:22px; border-radius:6px; background:var(--arden);
+        display:inline-flex; align-items:center; justify-content:center; color:var(--sand);
+        font-size:12px; font-weight:700 }
+  aside nav { display:flex; flex-direction:column; gap:2px }
+  aside nav a { display:block; padding:8px 10px; border-radius:8px; font-size:13px; font-weight:500;
+                color:var(--mut2); text-decoration:none; transition:color .14s, background .14s }
+  aside nav a:hover { color:#fff; background:rgba(255,255,255,.05) }
+  aside nav a.on { color:#fff; background:rgba(255,255,255,.08) }
+  aside .foot { margin-top:auto; padding-top:18px; border-top:1px solid var(--line);
+                font-size:11.5px; color:var(--mut); line-height:1.6 }
+  aside .foot a { color:var(--soft); text-decoration:none }
+  aside .foot a:hover { color:#fff }
+
+  main { padding:0 48px 120px; max-width:1060px; min-width:0 }
+
+  /* ---------- section scaffolding ---------- */
+  section { padding-top:72px }
+  .sec-lbl { font-size:11px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:var(--mut) }
+  h2 { font-size:28px; font-weight:650; letter-spacing:-.025em; color:#fff; margin:10px 0 6px;
+       font-family:'Space Grotesk',Inter,sans-serif }
+  .sec-sub { color:var(--mut2); font-size:13.5px; line-height:1.65; max-width:560px; margin-bottom:28px }
+  h3 { font-size:11px; font-weight:600; letter-spacing:.16em; text-transform:uppercase;
+       color:var(--mut); margin:34px 0 14px }
+  .card { background:var(--panel); border:1px solid var(--line); border-radius:12px }
+
+  /* ---------- cover ---------- */
+  .cover { padding-top:64px }
+  .cover .hero { border:1px solid var(--line); border-radius:16px; overflow:hidden;
+        background:linear-gradient(135deg,var(--ink) 0%,#173425 55%,var(--arden) 130%);
+        padding:72px 56px 60px; position:relative }
+  .cover .hero::after { content:''; position:absolute; inset:0;
+        background:radial-gradient(720px 300px at 85% -10%, rgba(167,196,160,.22), transparent 70%) }
+  .cover .hero .lbl { font-size:11px; font-weight:600; letter-spacing:.16em; text-transform:uppercase;
+        color:var(--lichen); position:relative; z-index:1 }
+  .cover .hero h1 { font-family:'Space Grotesk',Inter,sans-serif; font-size:56px; font-weight:700;
+        letter-spacing:-.03em; color:var(--sand); margin:16px 0 10px; position:relative; z-index:1 }
+  .cover .hero p { font-size:16px; color:rgba(233,228,216,.75); max-width:480px; line-height:1.6;
+        position:relative; z-index:1 }
+  .meta-row { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-top:14px }
+  .meta-row .card { padding:18px 20px }
+  .meta-row .k { font-size:10.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--mut); margin-bottom:7px }
+  .meta-row .v { font-size:13.5px; color:var(--soft); line-height:1.55 }
+  .meta-row .v a { text-decoration:none; color:var(--lichen) } .meta-row .v a:hover { text-decoration:underline }
+
+  /* ---------- logo ---------- */
+  .logo-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:14px }
+  .logo-tile { border-radius:12px; border:1px solid var(--line); overflow:hidden }
+  .logo-tile .stage { height:150px; display:flex; align-items:center; justify-content:center }
+  .logo-tile .cap { padding:12px 16px; border-top:1px solid var(--line); background:var(--panel);
+        font-size:12px; color:var(--mut2); display:flex; justify-content:space-between; align-items:center }
+  .logo-tile .cap b { color:var(--soft); font-weight:600 }
+  .wm { font-family:'Space Grotesk',Inter,sans-serif; font-weight:700; letter-spacing:-.03em; font-size:30px }
+  .lm { width:46px; height:46px; border-radius:11px; background:var(--arden); color:var(--sand);
+        display:flex; align-items:center; justify-content:center; font-family:'Space Grotesk',sans-serif;
+        font-weight:700; font-size:22px }
+  .rule-card { padding:18px 20px; font-size:13.5px; color:var(--soft); line-height:1.65 }
+  .dd { display:grid; grid-template-columns:1fr 1fr; gap:14px }
+  .dd .card { padding:18px 20px }
+  .dd .h { font-size:11px; letter-spacing:.14em; text-transform:uppercase; font-weight:650; margin-bottom:12px }
+  .dd .do .h { color:#5fbf7e } .dd .dont .h { color:#ff4d5a }
+  .dd ul { list-style:none; display:flex; flex-direction:column; gap:9px }
+  .dd li { font-size:13px; color:var(--soft); line-height:1.5; padding-left:20px; position:relative }
+  .dd .do li::before { content:'✓'; position:absolute; left:0; color:#5fbf7e; font-size:12px }
+  .dd .dont li::before { content:'✕'; position:absolute; left:0; color:#ff4d5a; font-size:12px }
+
+  /* ---------- colors ---------- */
+  .cgroup { margin-bottom:26px }
+  .cgroup .gname { font-size:14px; font-weight:600; color:#fff; margin-bottom:4px }
+  .cgroup .gdesc { font-size:12.5px; color:var(--mut2); margin-bottom:12px }
+  .swatches { display:grid; grid-template-columns:repeat(auto-fill,minmax(170px,1fr)); gap:12px }
+  .sw { border:1px solid var(--line); border-radius:12px; overflow:hidden; background:var(--panel) }
+  .sw .chip { height:76px }
+  .sw .info { padding:11px 13px }
+  .sw .nm { font-size:12.5px; font-weight:600; color:var(--soft) }
+  .sw .hx { font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--mut); margin-top:3px }
+  .sw .use { font-size:11px; color:var(--mut); margin-top:6px; line-height:1.5 }
+  .note { padding:14px 18px; font-size:12.5px; color:var(--mut2); line-height:1.6;
+          border:1px solid var(--line); border-radius:10px; background:var(--panel2); margin-top:8px }
+
+  /* ---------- typography ---------- */
+  .fonts { display:grid; grid-template-columns:repeat(3,1fr); gap:14px }
+  .font-card { padding:20px; border:1px solid var(--line); border-radius:12px; background:var(--panel) }
+  .font-card .role { font-size:10.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--mut) }
+  .font-card .fname { font-size:19px; font-weight:650; color:#fff; margin:9px 0 2px }
+  .font-card .spec { font-size:26px; margin:12px 0 4px; color:var(--soft) }
+  .font-card .stack { font-family:'JetBrains Mono',monospace; font-size:10.5px; color:var(--mut); line-height:1.6; word-break:break-all }
+  .scale-t { width:100%; border-collapse:collapse }
+  .scale-t td { border-top:1px solid var(--line); padding:13px 14px; vertical-align:baseline }
+  .scale-t tr:first-child td { border-top:none }
+  .scale-t .tn { font-family:'JetBrains Mono',monospace; font-size:11.5px; color:var(--mut2); white-space:nowrap }
+  .scale-t .tv { font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--mut); white-space:nowrap }
+  .scale-t .tp { color:#fff; font-family:'Space Grotesk',Inter,sans-serif; overflow:hidden; white-space:nowrap; text-overflow:ellipsis; max-width:0; width:99% }
+  .pair { padding:34px 36px }
+  .pair .ph { font-family:'Space Grotesk',Inter,sans-serif; font-size:32px; font-weight:700; letter-spacing:-.025em; color:#fff; margin-bottom:12px }
+  .pair .pb { font-size:14.5px; color:var(--mut2); line-height:1.7; max-width:560px; margin-bottom:18px }
+  .pair code { display:block; font-family:'JetBrains Mono',monospace; font-size:12px; color:var(--lichen);
+        background:var(--bg); border:1px solid var(--line); border-radius:8px; padding:14px 16px; line-height:1.7; white-space:pre }
+  .weights { display:flex; gap:12px; flex-wrap:wrap }
+  .wchip { border:1px solid var(--line); border-radius:10px; background:var(--panel); padding:14px 18px; min-width:120px }
+  .wchip .wl { font-size:24px; color:#fff } .wchip .wn { font-size:11px; color:var(--mut); margin-top:5px;
+        font-family:'JetBrains Mono',monospace }
+
+  /* ---------- spacing ---------- */
+  .tok-t { width:100%; border-collapse:collapse }
+  .tok-t td { border-top:1px solid var(--line); padding:11px 14px; font-size:12.5px }
+  .tok-t tr:first-child td { border-top:none }
+  .tok-t .tn { font-family:'JetBrains Mono',monospace; color:var(--soft); width:90px }
+  .tok-t .tv { font-family:'JetBrains Mono',monospace; color:var(--mut); width:220px }
+  .tok-t .td { color:var(--mut2) }
+  .tok-t .bar { height:14px; background:var(--arden); border-radius:3px }
+  .rad-demo { width:44px; height:32px; background:var(--panel2); border:1px solid var(--line2) }
+  .sh-demo { width:56px; height:30px; background:#fff; border-radius:6px }
+  .three { display:grid; grid-template-columns:1fr 1fr 1fr; gap:14px; align-items:start }
+  .three .card { padding:6px 4px }
+  .three h3 { margin:12px 14px }
+
+  /* ---------- photography ---------- */
+  .photos { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-bottom:8px }
+  .photo { border-radius:12px; border:1px solid var(--line); height:170px; position:relative; overflow:hidden }
+  .photo .tag { position:absolute; left:10px; bottom:10px; background:rgba(10,11,10,.82); backdrop-filter:blur(6px);
+        font-size:10.5px; letter-spacing:.08em; color:rgba(255,255,255,.88); padding:4px 9px; border-radius:100px;
+        border:1px solid rgba(255,255,255,.16) }
+  .kv { width:100%; border-collapse:collapse }
+  .kv td { border-top:1px solid var(--line); padding:12px 14px; font-size:13px }
+  .kv tr:first-child td { border-top:none }
+  .kv .k { color:var(--mut); width:160px; font-weight:600; font-size:11px; letter-spacing:.1em; text-transform:uppercase }
+  .kv .v { color:var(--soft); line-height:1.6 }
+  .accents { display:flex; gap:12px; flex-wrap:wrap }
+  .accent { display:flex; align-items:center; gap:10px; border:1px solid var(--line); background:var(--panel);
+        border-radius:100px; padding:7px 14px 7px 8px; font-size:12.5px; color:var(--soft) }
+  .accent i { width:22px; height:22px; border-radius:50%; display:block }
+  .accent code { font-family:'JetBrains Mono',monospace; font-size:10.5px; color:var(--mut) }
+
+  /* ---------- messaging ---------- */
+  .voice { padding:22px 24px }
+  .voice .vp { font-family:'Space Grotesk',Inter,sans-serif; font-size:21px; font-weight:650;
+        letter-spacing:-.015em; color:#fff; margin-bottom:8px }
+  .voice .vs { font-size:13px; color:var(--mut2); line-height:1.65 }
+  .ap { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:14px }
+  .ap .card { padding:16px 18px }
+  .ap .h { font-size:10.5px; letter-spacing:.14em; text-transform:uppercase; font-weight:650; margin-bottom:10px }
+  .ap .avoid .h { color:#ff4d5a } .ap .prefer .h { color:#5fbf7e }
+  .pill-list { display:flex; flex-wrap:wrap; gap:8px }
+  .pill-list span { border:1px solid var(--line2); background:var(--panel2); border-radius:100px;
+        padding:6px 12px; font-size:12px; color:var(--soft) }
+  .formula { padding:22px 24px }
+  .formula .f { font-family:'JetBrains Mono',monospace; font-size:13px; color:var(--lichen); margin-bottom:12px }
+  .formula .ex { font-family:'Space Grotesk',Inter,sans-serif; font-size:19px; font-weight:600; color:#fff;
+        line-height:1.4; padding:14px 16px; background:var(--bg); border:1px solid var(--line); border-radius:10px }
+  .formula .g { font-size:12.5px; color:var(--mut2); line-height:1.6; margin-top:12px }
+  .formula .g b { color:var(--soft); font-weight:600 }
+  .claims { display:grid; grid-template-columns:repeat(4,1fr); gap:12px }
+  .claim { border:1px solid var(--line); background:var(--panel); border-radius:12px; padding:18px }
+  .claim .st { font-family:'Space Grotesk',Inter,sans-serif; font-size:27px; font-weight:700; color:#fff; letter-spacing:-.02em }
+  .claim .lb { font-size:11.5px; color:var(--mut2); margin-top:6px; line-height:1.5 }
+  .heads { display:flex; flex-direction:column; gap:10px }
+  .heads .hx { border:1px solid var(--line); background:var(--panel); border-radius:10px; padding:15px 18px;
+        font-family:'Space Grotesk',Inter,sans-serif; font-size:17px; font-weight:600; color:var(--soft) }
+
+  .demo-note { margin-top:80px; border:1px dashed var(--line2); border-radius:12px; padding:18px 20px;
+        font-size:12.5px; color:var(--mut); line-height:1.7 }
+  .demo-note b { color:var(--soft) }
+  .demo-note a { color:var(--lichen); text-decoration:none } .demo-note a:hover { text-decoration:underline }
+
+  @media (max-width:900px){
+    .shell { grid-template-columns:1fr } aside { display:none } main { padding:0 22px 80px }
+    .logo-grid,.fonts,.photos,.meta-row,.three { grid-template-columns:1fr }
+    .claims { grid-template-columns:1fr 1fr } .cover .hero h1 { font-size:40px }
+  }
+</style></head><body>
+<div class="shell">
+  <aside>
+    <div class="lbl">Brandbook</div>
+    <div class="vname"><span class="dot">A</span> Arden</div>
+    <nav id="nav">
+      <a href="#cover" class="on">Overview</a>
+      <a href="#logo">Logo</a>
+      <a href="#colors">Colors</a>
+      <a href="#typography">Typography</a>
+      <a href="#spacing">Spacing &amp; Layout</a>
+      <a href="#photography">Photography</a>
+      <a href="#messaging">Messaging</a>
+    </nav>
+    <div class="foot">Generated with <a href="../index.html">Brandbook Generator</a><br>by Builders Studio · v1</div>
+  </aside>
+
+  <main>
+    <!-- ================= cover ================= -->
+    <section id="cover" class="cover">
+      <div class="hero">
+        <div class="lbl">Brand guidelines · 2026</div>
+        <h1>Arden</h1>
+        <p>Onboarding that runs itself. Arden turns your customer onboarding into an automated, self-serve journey — so your team ships accounts, not checklists.</p>
+      </div>
+      <div class="meta-row">
+        <div class="card"><div class="k">Tagline</div><div class="v">Onboarding that runs itself.</div></div>
+        <div class="card"><div class="k">One-liner</div><div class="v">Automated customer onboarding for B2B SaaS teams.</div></div>
+        <div class="card"><div class="k">Website</div><div class="v"><a href="#">arden.example</a></div></div>
+      </div>
+    </section>
+
+    <!-- ================= logo ================= -->
+    <section id="logo">
+      <div class="sec-lbl">01</div>
+      <h2>Logo</h2>
+      <p class="sec-sub">One wordmark, one inverse, one lettermark. Nothing else. The wordmark is set in Space Grotesk Bold with tightened tracking; the lettermark carries the brand into small spaces.</p>
+      <div class="logo-grid">
+        <div class="logo-tile">
+          <div class="stage" style="background:var(--sand)"><span class="wm" style="color:var(--ink)">arden</span></div>
+          <div class="cap"><b>Primary</b><span>on light</span></div>
+        </div>
+        <div class="logo-tile">
+          <div class="stage" style="background:var(--ink)"><span class="wm" style="color:var(--sand)">arden</span></div>
+          <div class="cap"><b>Inverse</b><span>on dark</span></div>
+        </div>
+        <div class="logo-tile">
+          <div class="stage" style="background:var(--panel2)"><span class="lm">A</span></div>
+          <div class="cap"><b>Lettermark</b><span>favicons · avatars</span></div>
+        </div>
+      </div>
+      <h3>Clear space</h3>
+      <div class="card rule-card">Preserve clear space equal to the height of the “a” on all four sides of the wordmark. Never place other elements, text, or edges inside that zone.</div>
+      <h3>Rules</h3>
+      <div class="dd">
+        <div class="card do"><div class="h">Do</div><ul>
+          <li>Use the primary wordmark on light backgrounds.</li>
+          <li>Use the inverse wordmark on Ink or photography.</li>
+          <li>Use the lettermark below 24px of height.</li>
+          <li>Keep the logo on solid or gently graded backgrounds.</li>
+        </ul></div>
+        <div class="card dont"><div class="h">Don't</div><ul>
+          <li>Do not stretch, rotate, or distort the logo.</li>
+          <li>Do not recolor the wordmark outside the palette.</li>
+          <li>Do not add shadows, outlines, or effects.</li>
+          <li>Do not place the wordmark over busy imagery.</li>
+        </ul></div>
+      </div>
+    </section>
+
+    <!-- ================= colors ================= -->
+    <section id="colors">
+      <div class="sec-lbl">02</div>
+      <h2>Colors</h2>
+      <p class="sec-sub">A restrained palette: two brand colors, a warm paper neutral, and a single signal accent. Most surfaces are neutral; Arden Green appears where the product acts.</p>
+
+      <div class="cgroup">
+        <div class="gname">Brand</div>
+        <div class="gdesc">Core identity. Use deliberately — these are the colors people associate with Arden.</div>
+        <div class="swatches">
+          <div class="sw"><div class="chip" style="background:#2F6B4F"></div><div class="info"><div class="nm">Arden Green</div><div class="hx">#2F6B4F</div><div class="use">Primary actions, links, the lettermark.</div></div></div>
+          <div class="sw"><div class="chip" style="background:#101512"></div><div class="info"><div class="nm">Ink</div><div class="hx">#101512</div><div class="use">Headlines, dark surfaces, the inverse stage.</div></div></div>
+          <div class="sw"><div class="chip" style="background:#A7C4A0"></div><div class="info"><div class="nm">Lichen</div><div class="hx">#A7C4A0</div><div class="use">Tints, illustrations, secondary emphasis.</div></div></div>
+        </div>
+      </div>
+
+      <div class="cgroup">
+        <div class="gname">Neutrals</div>
+        <div class="gdesc">The ground everything sits on. Paper for light surfaces, graded greys for structure.</div>
+        <div class="swatches">
+          <div class="sw"><div class="chip" style="background:#E9E4D8"></div><div class="info"><div class="nm">Paper</div><div class="hx">#E9E4D8</div><div class="use">Light backgrounds, logo stage.</div></div></div>
+          <div class="sw"><div class="chip" style="background:#F7F5F0"></div><div class="info"><div class="nm">Fog</div><div class="hx">#F7F5F0</div><div class="use">App background, cards on Paper.</div></div></div>
+          <div class="sw"><div class="chip" style="background:#5C6660"></div><div class="info"><div class="nm">Slate</div><div class="hx">#5C6660</div><div class="use">Body text on light, secondary labels.</div></div></div>
+        </div>
+      </div>
+
+      <div class="cgroup">
+        <div class="gname">Signal</div>
+        <div class="gdesc">One accent, reserved for states that need attention.</div>
+        <div class="swatches">
+          <div class="sw"><div class="chip" style="background:#E0A438"></div><div class="info"><div class="nm">Amber</div><div class="hx">#E0A438</div><div class="use">Warnings, pending states, highlights. Never decorative.</div></div></div>
+          <div class="sw"><div class="chip" style="background:#C4453B"></div><div class="info"><div class="nm">Clay</div><div class="hx">#C4453B</div><div class="use">Errors and destructive actions only.</div></div></div>
+        </div>
+      </div>
+      <div class="note">All brand-color pairings target WCAG 2.1 AA — 4.5:1 for normal text, 3:1 for large text. Ink on Paper and Paper on Arden Green both clear AA for body copy.</div>
+    </section>
+
+    <!-- ================= typography ================= -->
+    <section id="typography">
+      <div class="sec-lbl">03</div>
+      <h2>Typography</h2>
+      <p class="sec-sub">Space Grotesk carries the voice in headlines; Inter does the quiet work of interfaces and body copy; JetBrains Mono handles data and code.</p>
+      <div class="fonts">
+        <div class="font-card">
+          <div class="role">Heading</div><div class="fname">Space Grotesk</div>
+          <div class="spec" style="font-family:'Space Grotesk';font-weight:700;letter-spacing:-.02em">Aa Bb Cc 123</div>
+          <div class="stack">'Space Grotesk', 'Inter', system-ui, sans-serif</div>
+        </div>
+        <div class="font-card">
+          <div class="role">Body</div><div class="fname">Inter</div>
+          <div class="spec" style="font-family:Inter">Aa Bb Cc 123</div>
+          <div class="stack">'Inter', system-ui, -apple-system, sans-serif</div>
+        </div>
+        <div class="font-card">
+          <div class="role">Mono</div><div class="fname">JetBrains Mono</div>
+          <div class="spec" style="font-family:'JetBrains Mono';font-size:21px">Aa Bb Cc 123</div>
+          <div class="stack">'JetBrains Mono', ui-monospace, monospace</div>
+        </div>
+      </div>
+      <h3>Type scale</h3>
+      <div class="card" style="padding:4px 6px"><table class="scale-t">
+        <tr><td class="tn">display</td><td class="tv">4rem / 1.1 · 700</td><td class="tp" style="font-size:34px;font-weight:700">Onboarding that runs itself.</td></tr>
+        <tr><td class="tn">h1</td><td class="tv">2.5rem / 1.15 · 700</td><td class="tp" style="font-size:27px;font-weight:700">Onboarding that runs itself.</td></tr>
+        <tr><td class="tn">h2</td><td class="tv">2rem / 1.2 · 650</td><td class="tp" style="font-size:22px;font-weight:650">Onboarding that runs itself.</td></tr>
+        <tr><td class="tn">h3</td><td class="tv">1.5rem / 1.3 · 600</td><td class="tp" style="font-size:18px;font-weight:600">Onboarding that runs itself.</td></tr>
+        <tr><td class="tn">body-lg</td><td class="tv">1.125rem / 1.6 · 400</td><td class="tp" style="font-size:15.5px;font-family:Inter;font-weight:400">Onboarding that runs itself.</td></tr>
+        <tr><td class="tn">body</td><td class="tv">1rem / 1.6 · 400</td><td class="tp" style="font-size:14px;font-family:Inter;font-weight:400">Onboarding that runs itself.</td></tr>
+        <tr><td class="tn">small</td><td class="tv">0.875rem / 1.5 · 500</td><td class="tp" style="font-size:12.5px;font-family:Inter;font-weight:500">Onboarding that runs itself.</td></tr>
+        <tr><td class="tn">caption</td><td class="tv">0.75rem / 1.4 · 500</td><td class="tp" style="font-size:11px;font-family:Inter;font-weight:500;letter-spacing:.06em;text-transform:uppercase">Onboarding that runs itself.</td></tr>
+      </table></div>
+      <h3>Weights</h3>
+      <div class="weights">
+        <div class="wchip"><div class="wl" style="font-weight:400">Aa</div><div class="wn">400 Regular</div></div>
+        <div class="wchip"><div class="wl" style="font-weight:500">Aa</div><div class="wn">500 Medium</div></div>
+        <div class="wchip"><div class="wl" style="font-weight:600">Aa</div><div class="wn">600 Semibold</div></div>
+        <div class="wchip"><div class="wl" style="font-weight:700">Aa</div><div class="wn">700 Bold</div></div>
+      </div>
+      <h3>Pairing example</h3>
+      <div class="card pair">
+        <div class="ph">Onboarding that runs itself.</div>
+        <div class="pb">Arden watches every new account, runs the setup steps your team used to do by hand, and raises only the exceptions that actually need a human. Your customers reach value sooner; your team stops babysitting checklists.</div>
+        <code>{
+  "account": "acme-industries",
+  "steps_completed": 14,
+  "status": "activated"
+}</code>
+      </div>
+    </section>
+
+    <!-- ================= spacing ================= -->
+    <section id="spacing">
+      <div class="sec-lbl">04</div>
+      <h2>Spacing &amp; Layout</h2>
+      <p class="sec-sub">A 4px base grid. Radii are soft but never bubbly; shadows are quiet and used only to separate layers.</p>
+      <div class="three">
+        <div class="card"><h3>Spacing</h3><table class="tok-t">
+          <tr><td class="tn">xs</td><td class="tv">0.25rem</td><td><div class="bar" style="width:4px"></div></td></tr>
+          <tr><td class="tn">sm</td><td class="tv">0.5rem</td><td><div class="bar" style="width:8px"></div></td></tr>
+          <tr><td class="tn">md</td><td class="tv">1rem</td><td><div class="bar" style="width:16px"></div></td></tr>
+          <tr><td class="tn">lg</td><td class="tv">1.5rem</td><td><div class="bar" style="width:24px"></div></td></tr>
+          <tr><td class="tn">xl</td><td class="tv">2.5rem</td><td><div class="bar" style="width:40px"></div></td></tr>
+          <tr><td class="tn">2xl</td><td class="tv">4rem</td><td><div class="bar" style="width:64px"></div></td></tr>
+        </table></div>
+        <div class="card"><h3>Border radius</h3><table class="tok-t">
+          <tr><td class="tn">sm</td><td class="tv">0.25rem</td><td><div class="rad-demo" style="border-radius:4px"></div></td></tr>
+          <tr><td class="tn">md</td><td class="tv">0.5rem</td><td><div class="rad-demo" style="border-radius:8px"></div></td></tr>
+          <tr><td class="tn">lg</td><td class="tv">0.75rem</td><td><div class="rad-demo" style="border-radius:12px"></div></td></tr>
+          <tr><td class="tn">pill</td><td class="tv">9999px</td><td><div class="rad-demo" style="border-radius:100px"></div></td></tr>
+        </table></div>
+        <div class="card"><h3>Shadows</h3><table class="tok-t">
+          <tr><td class="tn">sm</td><td class="tv">0 1px 2px …/.05</td><td><div class="sh-demo" style="box-shadow:0 1px 2px rgba(0,0,0,.35)"></div></td></tr>
+          <tr><td class="tn">md</td><td class="tv">0 4px 12px …/.08</td><td><div class="sh-demo" style="box-shadow:0 4px 12px rgba(0,0,0,.45)"></div></td></tr>
+          <tr><td class="tn">lg</td><td class="tv">0 12px 32px …/.12</td><td><div class="sh-demo" style="box-shadow:0 12px 32px rgba(0,0,0,.6)"></div></td></tr>
+        </table></div>
+      </div>
+    </section>
+
+    <!-- ================= photography ================= -->
+    <section id="photography">
+      <div class="sec-lbl">05</div>
+      <h2>Photography</h2>
+      <p class="sec-sub">Calm, natural textures over stocky office scenes. Photography sets mood, never narrates the product — the product speaks through the interface.</p>
+      <div class="photos">
+        <div class="photo" style="background:linear-gradient(160deg,#2F6B4F,#101512 80%)"><span class="tag">FOREST CANOPY</span></div>
+        <div class="photo" style="background:linear-gradient(160deg,#A7C4A0,#5C6660 90%)"><span class="tag">MORNING FOG</span></div>
+        <div class="photo" style="background:linear-gradient(160deg,#E9E4D8,#A7C4A0 110%)"><span class="tag">RIVER STONE</span></div>
+      </div>
+      <h3>Style direction</h3>
+      <div class="card"><table class="kv">
+        <tr><td class="k">Subject</td><td class="v">Single natural subject, centered, calm. Never a crowd, never an office.</td></tr>
+        <tr><td class="k">Light</td><td class="v">Soft, directional, early-morning. No hard flash, no HDR.</td></tr>
+        <tr><td class="k">Palette</td><td class="v">Greens and warm neutrals that echo the brand palette.</td></tr>
+        <tr><td class="k">Reference</td><td class="v">Forest edges, fog over fields, river stones, moss on bark — texture at a human distance.</td></tr>
+      </table></div>
+      <h3>Rules</h3>
+      <div class="dd">
+        <div class="card do"><div class="h">Do</div><ul>
+          <li>Single subject per frame.</li>
+          <li>Keep at least a third of the frame quiet for type.</li>
+          <li>Grade toward the brand greens.</li>
+        </ul></div>
+        <div class="card dont"><div class="h">Don't</div><ul>
+          <li>No stock office scenes or posed teams.</li>
+          <li>No aerial drone shots.</li>
+          <li>No saturated, high-contrast grading.</li>
+        </ul></div>
+      </div>
+      <h3>Color accents in imagery</h3>
+      <div class="accents">
+        <div class="accent"><i style="background:#2F6B4F"></i>Arden Green <code>#2F6B4F</code></div>
+        <div class="accent"><i style="background:#A7C4A0"></i>Lichen <code>#A7C4A0</code></div>
+        <div class="accent"><i style="background:#E9E4D8"></i>Paper <code>#E9E4D8</code></div>
+        <div class="accent"><i style="background:#E0A438"></i>Amber <code>#E0A438</code></div>
+      </div>
+    </section>
+
+    <!-- ================= messaging ================= -->
+    <section id="messaging">
+      <div class="sec-lbl">06</div>
+      <h2>Messaging</h2>
+      <p class="sec-sub">How Arden sounds — in headlines, product copy, and posts. This section is what downstream tools read first.</p>
+      <h3>Voice</h3>
+      <div class="card voice">
+        <div class="vp">Calm, specific, quietly confident.</div>
+        <div class="vs">Second person (“you”), active voice, short sentences. Name the workflow, name the outcome, skip the adjectives. Arden never sounds excited; it sounds certain.</div>
+      </div>
+      <div class="ap">
+        <div class="card avoid"><div class="h">Avoid</div><div class="pill-list">
+          <span>Generic buzzwords</span><span>“Revolutionary / game-changing”</span><span>Exclamation marks</span>
+        </div></div>
+        <div class="card prefer"><div class="h">Prefer</div><div class="pill-list">
+          <span>Specific workflows</span><span>Concrete time saved</span><span>Plain verbs</span>
+        </div></div>
+      </div>
+      <h3>Headline formula</h3>
+      <div class="card formula">
+        <div class="f">[Manual pain] → [What now runs itself]</div>
+        <div class="ex">Your team spends the first week of every deal on setup. Arden makes it an afternoon.</div>
+        <div class="g"><b>Supporting copy:</b> one concrete workflow, one number, one proof point — never more than three sentences. <b>CTA:</b> action verb plus a time horizon (“See your onboarding mapped in 15 minutes”). Avoid “Learn more”.</div>
+      </div>
+      <h3>Proof points</h3>
+      <div class="claims">
+        <div class="claim"><div class="st">14</div><div class="lb">Setup steps automated per average account</div></div>
+        <div class="claim"><div class="st">6 days</div><div class="lb">Median time-to-activation, down from 3 weeks</div></div>
+        <div class="claim"><div class="st">120+</div><div class="lb">Onboarding runs completed by design partners</div></div>
+        <div class="claim"><div class="st">0</div><div class="lb">Checklists a customer sees. Ever.</div></div>
+      </div>
+      <h3>Headline examples</h3>
+      <div class="heads">
+        <div class="hx">Onboarding that runs itself.</div>
+        <div class="hx">Ship the account, not the checklist.</div>
+        <div class="hx">Your customer's first week, without your team's first week.</div>
+      </div>
+      <h3>Rules</h3>
+      <div class="dd">
+        <div class="card do"><div class="h">Do</div><ul>
+          <li>Lead with the outcome, support with the mechanism.</li>
+          <li>Use real numbers from real runs.</li>
+          <li>Write like you'd explain it to one founder over coffee.</li>
+        </ul></div>
+        <div class="card dont"><div class="h">Don't</div><ul>
+          <li>Don't claim AI magic without a concrete mechanism.</li>
+          <li>Don't invent metrics or customers.</li>
+          <li>Don't stack more than one idea per sentence.</li>
+        </ul></div>
+      </div>
+
+      <div class="demo-note"><b>This is a demo brandbook for a fictional venture.</b> Every number and claim above is invented to show the structure. Point the <a href="../index.html">Brandbook Generator</a> at your own website and it produces this same book from your real brand.</div>
+    </section>
+  </main>
+</div>
+<script>
+  // sidebar highlight follows scroll
+  const links=[...document.querySelectorAll('#nav a')];
+  const secs=links.map(a=>document.querySelector(a.getAttribute('href')));
+  const io=new IntersectionObserver(es=>{
+    es.forEach(e=>{ if(e.isIntersecting){
+      links.forEach(l=>l.classList.toggle('on', l.getAttribute('href')==='#'+e.target.id)); }});
+  },{rootMargin:'-30% 0px -60% 0px'});
+  secs.forEach(s=>io.observe(s));
+</script>
+</body></html>

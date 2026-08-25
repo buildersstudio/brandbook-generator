@@ -1,0 +1,246 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Brandbook Generator — Builders Studio Toolkit</title>
+<meta name="description" content="A free tool for founders: point it at your website, get a complete brandbook site — logo, colors, typography, photography, and messaging — as a single source of truth for all your marketing.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400..700&family=JetBrains+Mono:wght@400..600&family=Space+Grotesk:wght@500..700&display=swap" rel="stylesheet">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box }
+  :root { --bg:#0e0f10; --panel:#141516; --panel2:#17181a; --line:#26282b; --line2:#2e3134;
+          --txt:#e9ebee; --mut:#6b7075; --mut2:#9aa0a6; --soft:#c7cace;
+          --green:#2F6B4F; --lichen:#A7C4A0; --sand:#E9E4D8 }
+  body { background:var(--bg); color:var(--txt); font-family:Inter,system-ui,sans-serif;
+         -webkit-font-smoothing:antialiased }
+  a { color:inherit }
+  .wrap { max-width:1080px; margin:0 auto; padding:0 40px }
+
+  /* ---------- top bar ---------- */
+  .top { display:flex; align-items:center; justify-content:space-between; padding:22px 0 }
+  .top .lbl { font-size:11px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:var(--mut) }
+  .top .lbl b { color:var(--soft); font-weight:600 }
+  .top .acts { display:flex; gap:10px }
+  .btn { display:inline-flex; align-items:center; gap:8px; border-radius:100px; padding:9px 17px;
+         font-size:12.5px; font-weight:600; text-decoration:none; cursor:pointer; font-family:inherit;
+         transition:background .16s, border-color .16s, color .16s }
+  .btn.ghost { background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.16); color:var(--txt) }
+  .btn.ghost:hover { background:#fff; border-color:#fff; color:var(--bg) }
+  .btn.solid { background:#fff; border:1px solid #fff; color:var(--bg) }
+  .btn.solid:hover { background:var(--sand); border-color:var(--sand) }
+
+  /* ---------- hero ---------- */
+  .hero { padding:88px 0 64px; text-align:center }
+  .hero .kicker { font-size:11px; font-weight:600; letter-spacing:.16em; text-transform:uppercase;
+                  color:var(--lichen) }
+  .hero h1 { font-family:'Space Grotesk',Inter,sans-serif; font-size:56px; font-weight:700;
+             letter-spacing:-.03em; color:#fff; margin:18px auto 16px; max-width:760px; line-height:1.08 }
+  .hero p { font-size:16.5px; color:var(--mut2); line-height:1.65; max-width:600px; margin:0 auto 30px }
+  .hero .cta { display:flex; gap:12px; justify-content:center }
+  .hero .free { margin-top:16px; font-size:12px; color:var(--mut) }
+
+  /* ---------- terminal mock ---------- */
+  .term { max-width:720px; margin:56px auto 0; border:1px solid var(--line2); border-radius:14px;
+          background:var(--panel2); overflow:hidden; text-align:left;
+          box-shadow:0 40px 110px rgba(0,0,0,.5) }
+  .term .bar { display:flex; align-items:center; gap:7px; padding:12px 16px; border-bottom:1px solid var(--line) }
+  .term .bar i { width:11px; height:11px; border-radius:50%; background:#2a2c2f; display:block }
+  .term .bar span { margin-left:8px; font-size:11px; color:var(--mut); font-family:'JetBrains Mono',monospace }
+  .term pre { padding:20px 22px 24px; font-family:'JetBrains Mono',monospace; font-size:12.5px;
+              line-height:1.85; color:var(--soft); overflow-x:auto }
+  .term .u { color:#fff } .term .c { color:var(--lichen) } .term .d { color:var(--mut) }
+
+  /* ---------- sections ---------- */
+  section { padding:84px 0 0 }
+  .sec-k { font-size:11px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:var(--mut);
+           text-align:center }
+  h2 { font-family:'Space Grotesk',Inter,sans-serif; font-size:32px; font-weight:650; letter-spacing:-.025em;
+       color:#fff; text-align:center; margin:12px 0 10px }
+  .sec-sub { color:var(--mut2); font-size:14px; line-height:1.65; max-width:560px; margin:0 auto 40px; text-align:center }
+
+  /* steps */
+  .steps { display:grid; grid-template-columns:repeat(3,1fr); gap:14px }
+  .step { background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:26px 24px;
+          transition:border-color .18s }
+  .step:hover { border-color:#3a3d40 }
+  .step .n { width:28px; height:28px; border-radius:50%; border:1px solid var(--line2); color:var(--mut2);
+             font-size:12.5px; font-weight:700; display:flex; align-items:center; justify-content:center;
+             font-family:'JetBrains Mono',monospace; margin-bottom:16px }
+  .step h4 { font-size:16px; font-weight:650; color:#fff; letter-spacing:-.01em; margin-bottom:8px }
+  .step p { font-size:13px; color:var(--mut2); line-height:1.65 }
+  .step p code { font-family:'JetBrains Mono',monospace; font-size:11px; background:var(--bg);
+                 border:1px solid var(--line); border-radius:5px; padding:2px 6px; color:var(--soft) }
+
+  /* contents grid */
+  .book { display:grid; grid-template-columns:repeat(3,1fr); gap:14px }
+  .chapter { background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:22px;
+             transition:border-color .18s }
+  .chapter:hover { border-color:#3a3d40 }
+  .chapter .ic { font-size:18px; margin-bottom:12px; display:block }
+  .chapter h4 { font-size:14.5px; font-weight:650; color:#fff; margin-bottom:6px }
+  .chapter p { font-size:12.5px; color:var(--mut2); line-height:1.6 }
+
+  /* why band */
+  .why { border:1px solid var(--line); border-radius:16px; overflow:hidden; margin-top:40px;
+         background:linear-gradient(135deg,#101512 0%,#173425 60%,var(--green) 150%);
+         padding:48px 48px 44px; position:relative }
+  .why::after { content:''; position:absolute; inset:0;
+         background:radial-gradient(640px 260px at 88% -12%, rgba(167,196,160,.2), transparent 70%) }
+  .why > * { position:relative; z-index:1 }
+  .why .k { font-size:11px; font-weight:600; letter-spacing:.16em; text-transform:uppercase; color:var(--lichen) }
+  .why h3 { font-family:'Space Grotesk',Inter,sans-serif; font-size:26px; font-weight:650; letter-spacing:-.02em;
+            color:var(--sand); margin:12px 0 10px; max-width:560px }
+  .why p { font-size:14px; color:rgba(233,228,216,.72); line-height:1.7; max-width:600px }
+  .why .tools { display:flex; gap:10px; flex-wrap:wrap; margin-top:22px }
+  .why .tools span { border:1px solid rgba(233,228,216,.25); color:var(--sand); border-radius:100px;
+                     padding:7px 14px; font-size:12px; font-weight:600 }
+  .why .tools span.soon { opacity:.55; font-weight:500 }
+
+  /* demo preview */
+  .demo-cta { border:1px solid var(--line); border-radius:16px; background:var(--panel); overflow:hidden;
+              display:grid; grid-template-columns:1fr 1fr; align-items:stretch }
+  .demo-cta .tx { padding:40px 42px; display:flex; flex-direction:column; justify-content:center; gap:14px }
+  .demo-cta .tx h3 { font-family:'Space Grotesk',Inter,sans-serif; font-size:24px; font-weight:650;
+                     letter-spacing:-.02em; color:#fff }
+  .demo-cta .tx p { font-size:13.5px; color:var(--mut2); line-height:1.7 }
+  .demo-cta .tx .btn { align-self:flex-start; margin-top:6px }
+  .demo-cta .pv { border-left:1px solid var(--line); background:var(--panel2); position:relative; min-height:320px; overflow:hidden }
+  .demo-cta .pv .mini { position:absolute; inset:26px 0 0 34px; border-radius:12px 0 0 0;
+        border:1px solid var(--line2); border-right:none; border-bottom:none; background:var(--bg);
+        padding:22px 0 0 22px; overflow:hidden }
+  .mini .mrow { display:flex; gap:16px }
+  .mini .mnav { width:104px; flex:none; display:flex; flex-direction:column; gap:7px }
+  .mini .mnav i { display:block; height:9px; border-radius:4px; background:var(--line) }
+  .mini .mnav i.on { background:var(--green) }
+  .mini .mbody { flex:1; display:flex; flex-direction:column; gap:10px; padding-right:0 }
+  .mini .mhero { height:74px; border-radius:9px 0 0 9px;
+        background:linear-gradient(135deg,#101512,#173425 60%,var(--green) 150%) }
+  .mini .msw { display:flex; gap:8px }
+  .mini .msw i { flex:1; height:34px; border-radius:7px 7px 0 0; display:block }
+  .mini .mtx { height:8px; border-radius:4px; background:var(--line); width:70% }
+  .mini .mtx.s { width:45% }
+
+  /* footer */
+  footer { margin-top:96px; border-top:1px solid var(--line); padding:30px 0 46px;
+           display:flex; align-items:center; justify-content:space-between; font-size:12px; color:var(--mut) }
+  footer a { color:var(--soft); text-decoration:none } footer a:hover { color:#fff }
+
+  @media (max-width:860px){
+    .wrap { padding:0 22px } .hero h1 { font-size:38px }
+    .steps,.book { grid-template-columns:1fr }
+    .demo-cta { grid-template-columns:1fr } .demo-cta .pv { border-left:none; border-top:1px solid var(--line) }
+    .why { padding:32px 26px } footer { flex-direction:column; gap:12px }
+  }
+</style></head><body>
+
+<div class="wrap">
+  <div class="top">
+    <div class="lbl"><b>Builders Studio</b> · Toolkit</div>
+    <div class="acts">
+      <a class="btn ghost" href="demo/index.html">See a demo brandbook</a>
+      <a class="btn solid" href="https://github.com/builders-studio" target="_blank" rel="noopener">GitHub ↗</a>
+    </div>
+  </div>
+
+  <!-- ============ hero ============ -->
+  <div class="hero">
+    <div class="kicker">Free · Open source · Runs in Claude Code</div>
+    <h1>Your brand, distilled into a single source of truth.</h1>
+    <p>Point the generator at your website — or drop in a deck, screenshots, whatever you have — and it produces a complete brandbook site: logo, colors, typography, photography direction, and messaging. Yours to keep, publish, and build on.</p>
+    <div class="cta">
+      <a class="btn solid" href="https://github.com/builders-studio" target="_blank" rel="noopener">Get the tool ↗</a>
+      <a class="btn ghost" href="demo/index.html">Browse the demo →</a>
+    </div>
+    <div class="free">No signup. No API to us. Your brand never leaves your machine unless you publish it.</div>
+
+    <div class="term">
+      <div class="bar"><i></i><i></i><i></i><span>claude — brandbook-generator</span></div>
+      <pre><span class="d">$</span> <span class="u">claude</span>
+<span class="d">›</span> <span class="u">My website is acme.example — build my brandbook.</span>
+
+<span class="c">Reading acme.example… found logo, 2 fonts, 9 colors, voice patterns.</span>
+<span class="c">Writing brand-book.json ✓</span>
+<span class="c">Rendering brandbook site → site/index.html ✓</span>
+
+<span class="c">Preview it at http://localhost:4600 — want me to publish it to a</span>
+<span class="c">public link (Vercel or GitHub Pages) so your tools and your team</span>
+<span class="c">can use it as the source of truth?</span></pre>
+    </div>
+  </div>
+
+  <!-- ============ how it works ============ -->
+  <section>
+    <div class="sec-k">How it works</div>
+    <h2>Three steps, one afternoon</h2>
+    <p class="sec-sub">There is no app and no API — the tool runs inside Claude Code on your machine. You talk, it builds.</p>
+    <div class="steps">
+      <div class="step"><div class="n">1</div><h4>Point</h4>
+        <p>Clone the repo, open it in Claude Code, and say what your brand is: a website URL, a pitch deck, a folder of screenshots and logos. Anything that carries your brand works as input.</p></div>
+      <div class="step"><div class="n">2</div><h4>Distill</h4>
+        <p>The generator extracts your logo, palette, type system, spacing, photography style, and voice — and writes them into one structured <code>brand-book.json</code> plus a rendered brandbook site.</p></div>
+      <div class="step"><div class="n">3</div><h4>Publish</h4>
+        <p>The book lives on localhost by default. When you're ready, one command publishes it to a public link (Vercel or GitHub Pages) so your team — and your other tools — can point at it.</p></div>
+    </div>
+  </section>
+
+  <!-- ============ what's inside ============ -->
+  <section>
+    <div class="sec-k">What you get</div>
+    <h2>A real brandbook, not a moodboard</h2>
+    <p class="sec-sub">The same structure we use for the ventures in our studio. Six chapters, each specific enough that a designer, a copywriter, or another tool can act on it.</p>
+    <div class="book">
+      <div class="chapter"><span class="ic">🔖</span><h4>Logo</h4><p>Primary, inverse, and lettermark variants with clear-space rules and explicit do's and don'ts.</p></div>
+      <div class="chapter"><span class="ic">🎨</span><h4>Colors</h4><p>Grouped swatches with hex values, usage notes, and WCAG contrast guidance.</p></div>
+      <div class="chapter"><span class="ic">🔤</span><h4>Typography</h4><p>Font roles and stacks, a full type scale, weights, and a live pairing example.</p></div>
+      <div class="chapter"><span class="ic">📐</span><h4>Spacing &amp; Layout</h4><p>Spacing tokens, border radii, and shadows — the quiet system behind consistent design.</p></div>
+      <div class="chapter"><span class="ic">📷</span><h4>Photography</h4><p>Style direction, framing rules, reference subjects, and the color accents imagery should carry.</p></div>
+      <div class="chapter"><span class="ic">💬</span><h4>Messaging</h4><p>Voice, headline formulas, proof points, and example headlines — what every post and page should sound like.</p></div>
+    </div>
+  </section>
+
+  <!-- ============ why ============ -->
+  <section>
+    <div class="sec-k">Why it exists</div>
+    <h2>One brandbook, many tools</h2>
+    <p class="sec-sub">A published brandbook becomes the source of truth every other marketing tool reads from — so nothing you generate ever goes off-brand.</p>
+    <div class="why">
+      <div class="k">toolkit.builders.studio</div>
+      <h3>Your brandbook feeds the whole toolkit.</h3>
+      <p>Every tool we ship reads the same book. Generate a LinkedIn post and it already knows your colors, your fonts, your voice, and which claims are real. Add a tool later and it's on-brand from the first output — no re-explaining your brand ever again.</p>
+      <div class="tools">
+        <span>Brandbook Generator</span>
+        <span>Post Generator Studio</span>
+        <span class="soon">Landing pages — soon</span>
+        <span class="soon">Sales one-pagers — soon</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ demo ============ -->
+  <section>
+    <div class="sec-k">Demo</div>
+    <h2>See a finished brandbook</h2>
+    <p class="sec-sub">Arden is a fictional venture we generated a full book for — browse it to see exactly what you'll get.</p>
+    <div class="demo-cta">
+      <div class="tx">
+        <h3>Arden — Onboarding that runs itself.</h3>
+        <p>Six chapters, from logo rules to headline formulas. Every venture's book has this same structure, rendered in its own brand colors and type.</p>
+        <a class="btn solid" href="demo/index.html">Open the demo brandbook →</a>
+      </div>
+      <div class="pv"><div class="mini">
+        <div class="mrow">
+          <div class="mnav"><i class="on" style="width:70%"></i><i style="width:55%"></i><i style="width:62%"></i><i style="width:78%"></i><i style="width:50%"></i><i style="width:66%"></i></div>
+          <div class="mbody">
+            <div class="mhero"></div>
+            <div class="msw"><i style="background:#2F6B4F"></i><i style="background:#101512"></i><i style="background:#A7C4A0"></i><i style="background:#E9E4D8"></i><i style="background:#E0A438"></i></div>
+            <div class="mtx"></div><div class="mtx s"></div>
+          </div>
+        </div>
+      </div></div>
+    </div>
+  </section>
+
+  <footer>
+    <div>© 2026 Builders Studio · Free for founders, open source</div>
+    <div><a href="https://github.com/builders-studio" target="_blank" rel="noopener">GitHub</a> &nbsp;·&nbsp; <a href="demo/index.html">Demo brandbook</a> &nbsp;·&nbsp; <a href="https://toolkit.builders.studio">toolkit.builders.studio</a></div>
+  </footer>
+</div>
+</body></html>

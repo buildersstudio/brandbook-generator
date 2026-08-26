@@ -10,7 +10,6 @@
     "year": "2026",
     "heroImage": "assets/grad-solid-ls.png"
   },
-
   "theme": {
     "deep": "#05060C",
     "cream": "#FAF7F2",
@@ -18,36 +17,39 @@
     "accent": "#8193FF",
     "ok": "#4AEEB0"
   },
-
   "type": {
-    "display": "'Favorit XB', 'Inter', system-ui, sans-serif",
-    "body": "'Favorit', 'Inter', system-ui, sans-serif",
+    "display": "'Stack Sans Headline', 'Inter', system-ui, sans-serif",
+    "body": "'Stack Sans Headline', 'Inter', system-ui, sans-serif",
     "flourish": "'Instrument Serif', Georgia, serif",
     "mono": "'DM Mono', ui-monospace, monospace",
-    "displayTracking": "-.022em"
+    "displayTracking": "-.022em",
+    "displayWeight": 700,
+    "bodyWeight": 400
   },
-
   "fonts": {
-    "googleFontsUrl": "https://fonts.googleapis.com/css2?family=Inter:wght@400..700&family=DM+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap",
-    "faces": [
-      { "family": "Favorit XB", "url": "https://builders.studio/fonts/FavoritStd-BoldExpanded.otf", "format": "opentype" },
-      { "family": "Favorit", "url": "https://builders.studio/fonts/FavoritStd-Book.otf", "format": "opentype" }
-    ]
+    "googleFontsUrl": "https://fonts.googleapis.com/css2?family=Stack+Sans+Headline:wght@400..700&family=Inter:wght@400..700&family=DM+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap",
+    "faces": []
   },
-
   "toc": {
     "logo": "Wordmark, inverse, the spark. Clear space and rules.",
     "colors": "Two grounds, four accents, the phase scale.",
-    "typography": "Favorit XB, Favorit, Instrument Serif, DM Mono.",
+    "typography": "Stack Sans Headline, Instrument Serif, DM Mono.",
     "spacing": "Grid, radii, shadows, the scrim.",
     "photography": "Real moments, gradients, signature elements.",
     "messaging": "Voice, headline formula, the hard bans."
   },
-
   "logo": {
     "intro": "The wordmark opens with the four-pointed spark. Black on cream, white on deep ink. Nothing in between.",
-    "primary": { "src": "assets/builders-logo.svg", "alt": "Builders wordmark, black", "on": "on cream" },
-    "inverse": { "src": "assets/builders-logo-white.svg", "alt": "Builders wordmark, white", "on": "on deep ink" },
+    "primary": {
+      "src": "assets/builders-logo.svg",
+      "alt": "Builders wordmark, black",
+      "on": "on cream"
+    },
+    "inverse": {
+      "src": "assets/builders-logo-white.svg",
+      "alt": "Builders wordmark, white",
+      "on": "on deep ink"
+    },
     "mark": {
       "label": "Spark",
       "use": "favicons · avatars",
@@ -69,7 +71,6 @@
       "No busy photography without a scrim."
     ]
   },
-
   "colors": {
     "intro": "Two grounds carry everything. Four accents, one per pillar, appear as chips, data, and gradient stops — never as body text.",
     "groups": [
@@ -77,47 +78,141 @@
         "name": "Grounds",
         "description": "Every asset is a dark card on Deep Ink or a light card on Cream.",
         "swatches": [
-          { "name": "Deep Ink", "value": "#05060C", "usage": "Dark ground. Default card background." },
-          { "name": "Cream", "value": "#FAF7F2", "usage": "Light ground. Print and logo stage." },
-          { "name": "Ink", "value": "#101015", "usage": "Text on cream. Never pure black." }
+          {
+            "name": "Deep Ink",
+            "value": "#05060C",
+            "usage": "Dark ground. Default card background."
+          },
+          {
+            "name": "Cream",
+            "value": "#FAF7F2",
+            "usage": "Light ground. Print and logo stage."
+          },
+          {
+            "name": "Ink",
+            "value": "#101015",
+            "usage": "Text on cream. Never pure black."
+          }
         ]
       },
       {
         "name": "Accents",
         "description": "One color per pillar of the studio.",
         "swatches": [
-          { "name": "Studio", "value": "#8193FF", "usage": "The studio and the program." },
-          { "name": "Network", "value": "#E986B4", "usage": "People, events, community." },
-          { "name": "Capital", "value": "#D4A574", "usage": "Funding and staged capital." },
-          { "name": "Green", "value": "#4AEEB0", "usage": "Confirmation, live states, progress." }
+          {
+            "name": "Studio",
+            "value": "#8193FF",
+            "usage": "The studio and the program."
+          },
+          {
+            "name": "Network",
+            "value": "#E986B4",
+            "usage": "People, events, community."
+          },
+          {
+            "name": "Capital",
+            "value": "#D4A574",
+            "usage": "Funding and staged capital."
+          },
+          {
+            "name": "Green",
+            "value": "#4AEEB0",
+            "usage": "Confirmation, live states, progress."
+          }
         ]
       }
     ],
     "scale": {
       "name": "Phase scale",
       "description": "The five-step ramp for program phases and staged sequences — always in this order.",
-      "values": ["#8193FF", "#96A0FA", "#A78BFA", "#E986B4", "#4AEEB0"]
+      "values": [
+        "#8193FF",
+        "#96A0FA",
+        "#A78BFA",
+        "#E986B4",
+        "#4AEEB0"
+      ]
     },
     "note": "White on Deep Ink and Ink on Cream both clear WCAG 2.1 AA for body text. Accents are for large display and non-text use."
   },
-
   "typography": {
-    "intro": "Four voices: Favorit XB shouts the headline, Favorit carries the body, Instrument Serif italic adds the single flourish, DM Mono whispers the kickers.",
+    "intro": "Three voices. Stack Sans Headline does the talking — 700 for the headline, 400 for the body — Instrument Serif italic adds the single flourish, and DM Mono whispers the kickers.",
     "sampleLine": "Where bold founders build.",
     "fonts": [
-      { "role": "Display", "name": "Favorit XB", "cls": "xb", "sample": "Aa Bb Cc 123", "stack": "'Favorit XB', 'Inter', system-ui, sans-serif · letter-spacing -0.022em" },
-      { "role": "Body", "name": "Favorit", "cls": "fav", "sample": "Aa Bb Cc 123", "stack": "'Favorit', 'Inter', system-ui, sans-serif" },
-      { "role": "Flourish", "name": "Instrument Serif Italic", "cls": "serif", "sample": "Aa Bb Cc 123", "sampleSize": "29px", "stack": "'Instrument Serif', Georgia, serif · italic, one phrase per asset" },
-      { "role": "Kicker · labels", "name": "DM Mono", "cls": "kick", "sample": "Batch · Demo Night", "sampleSize": "15px", "stack": "'DM Mono', ui-monospace, monospace · uppercase, letter-spacing 0.3em" }
+      {
+        "role": "Display",
+        "name": "Stack Sans Headline 700",
+        "cls": "xb",
+        "sample": "Aa Bb Cc 123",
+        "stack": "'Stack Sans Headline', 'Inter', system-ui, sans-serif · weight 700, letter-spacing -0.022em"
+      },
+      {
+        "role": "Body",
+        "name": "Stack Sans Headline 400",
+        "cls": "fav",
+        "sample": "Aa Bb Cc 123",
+        "stack": "'Stack Sans Headline', 'Inter', system-ui, sans-serif · weight 400"
+      },
+      {
+        "role": "Flourish",
+        "name": "Instrument Serif Italic",
+        "cls": "serif",
+        "sample": "Aa Bb Cc 123",
+        "sampleSize": "29px",
+        "stack": "'Instrument Serif', Georgia, serif · italic, one phrase per asset"
+      },
+      {
+        "role": "Kicker · labels",
+        "name": "DM Mono",
+        "cls": "kick",
+        "sample": "Batch · Demo Night",
+        "sampleSize": "15px",
+        "stack": "'DM Mono', ui-monospace, monospace · uppercase, letter-spacing 0.3em"
+      }
     ],
     "scale": [
-      { "name": "display", "spec": "4.5rem / 1.05", "cls": "xb", "previewSize": "32px" },
-      { "name": "h1", "spec": "3rem / 1.1", "cls": "xb", "previewSize": "26px" },
-      { "name": "h2", "spec": "2rem / 1.15", "cls": "xb", "previewSize": "21px" },
-      { "name": "flourish", "spec": "2rem / 1.04", "cls": "serif", "previewSize": "22px" },
-      { "name": "body-lg", "spec": "1.125rem / 1.55", "cls": "fav", "previewSize": "15.5px" },
-      { "name": "body", "spec": "1rem / 1.5", "cls": "fav", "previewSize": "14px" },
-      { "name": "kicker", "spec": "0.75rem / 1.4 · ls 0.3em", "cls": "kick", "previewSize": "11px" }
+      {
+        "name": "display",
+        "spec": "4.5rem / 1.05",
+        "cls": "xb",
+        "previewSize": "32px"
+      },
+      {
+        "name": "h1",
+        "spec": "3rem / 1.1",
+        "cls": "xb",
+        "previewSize": "26px"
+      },
+      {
+        "name": "h2",
+        "spec": "2rem / 1.15",
+        "cls": "xb",
+        "previewSize": "21px"
+      },
+      {
+        "name": "flourish",
+        "spec": "2rem / 1.04",
+        "cls": "serif",
+        "previewSize": "22px"
+      },
+      {
+        "name": "body-lg",
+        "spec": "1.125rem / 1.55",
+        "cls": "fav",
+        "previewSize": "15.5px"
+      },
+      {
+        "name": "body",
+        "spec": "1rem / 1.5",
+        "cls": "fav",
+        "previewSize": "14px"
+      },
+      {
+        "name": "kicker",
+        "spec": "0.75rem / 1.4 · ls 0.3em",
+        "cls": "kick",
+        "previewSize": "11px"
+      }
     ],
     "pairing": {
       "kicker": "Batch · Applications",
@@ -125,65 +220,175 @@
       "body": "Ten weeks in the studio. Staged capital as you hit milestones. A team on the ground beside you, and the VSI platform underneath everything you ship."
     }
   },
-
   "spacing": {
     "intro": "A 4px base grid. Generous outer margins, tight internal stacks. One large radius per card; type sits on the grid.",
     "spacing": [
-      { "name": "xs", "value": "0.25rem", "demo": "4px" },
-      { "name": "sm", "value": "0.5rem", "demo": "8px" },
-      { "name": "md", "value": "1rem", "demo": "16px" },
-      { "name": "lg", "value": "2rem", "demo": "32px" },
-      { "name": "xl", "value": "4rem", "demo": "64px" },
-      { "name": "frame", "value": "7% of card width", "demo": "84px" }
+      {
+        "name": "xs",
+        "value": "0.25rem",
+        "demo": "4px"
+      },
+      {
+        "name": "sm",
+        "value": "0.5rem",
+        "demo": "8px"
+      },
+      {
+        "name": "md",
+        "value": "1rem",
+        "demo": "16px"
+      },
+      {
+        "name": "lg",
+        "value": "2rem",
+        "demo": "32px"
+      },
+      {
+        "name": "xl",
+        "value": "4rem",
+        "demo": "64px"
+      },
+      {
+        "name": "frame",
+        "value": "7% of card width",
+        "demo": "84px"
+      }
     ],
     "radius": [
-      { "name": "chip", "value": "0.375rem", "demo": "6px" },
-      { "name": "tile", "value": "0.875rem", "demo": "14px" },
-      { "name": "card", "value": "1.125rem", "demo": "18px" },
-      { "name": "pill", "value": "9999px", "demo": "100px" }
+      {
+        "name": "chip",
+        "value": "0.375rem",
+        "demo": "6px"
+      },
+      {
+        "name": "tile",
+        "value": "0.875rem",
+        "demo": "14px"
+      },
+      {
+        "name": "card",
+        "value": "1.125rem",
+        "demo": "18px"
+      },
+      {
+        "name": "pill",
+        "value": "9999px",
+        "demo": "100px"
+      }
     ],
     "shadows": [
-      { "name": "tile", "value": "0 12px 30px …/.55", "demo": "box-shadow:0 6px 16px rgba(0,0,0,.55)" },
-      { "name": "card", "value": "0 24px 60px …/.5", "demo": "box-shadow:0 10px 26px rgba(0,0,0,.6)" },
-      { "name": "scrim", "value": "ink .5 → .85 vertical", "demo": "background:linear-gradient(180deg,rgba(5,6,12,.4),rgba(5,6,12,.9));border-radius:6px" }
+      {
+        "name": "tile",
+        "value": "0 12px 30px …/.55",
+        "demo": "box-shadow:0 6px 16px rgba(0,0,0,.55)"
+      },
+      {
+        "name": "card",
+        "value": "0 24px 60px …/.5",
+        "demo": "box-shadow:0 10px 26px rgba(0,0,0,.6)"
+      },
+      {
+        "name": "scrim",
+        "value": "ink .5 → .85 vertical",
+        "demo": "background:linear-gradient(180deg,rgba(5,6,12,.4),rgba(5,6,12,.9));border-radius:6px"
+      }
     ]
   },
-
   "photography": {
     "intro": "Real studio photography only — events, founders, the work. When there is no photo, the brand gradients take its place.",
     "groups": [
       {
         "name": "Events",
         "items": [
-          { "src": "assets/demo-night.webp", "alt": "Demo night", "tag": "Demo night" },
-          { "src": "assets/founder-weekend.webp", "alt": "Founder weekend", "tag": "Founder weekend" },
-          { "src": "assets/fireside.webp", "alt": "Fireside", "tag": "Fireside" },
-          { "src": "assets/cto-social.webp", "alt": "CTO social", "tag": "CTO social" },
-          { "src": "assets/investor-house.webp", "alt": "Investor house", "tag": "Investor house" },
-          { "src": "assets/winter-social.webp", "alt": "Winter social", "tag": "Winter social" }
+          {
+            "src": "assets/demo-night.webp",
+            "alt": "Demo night",
+            "tag": "Demo night"
+          },
+          {
+            "src": "assets/founder-weekend.webp",
+            "alt": "Founder weekend",
+            "tag": "Founder weekend"
+          },
+          {
+            "src": "assets/fireside.webp",
+            "alt": "Fireside",
+            "tag": "Fireside"
+          },
+          {
+            "src": "assets/cto-social.webp",
+            "alt": "CTO social",
+            "tag": "CTO social"
+          },
+          {
+            "src": "assets/investor-house.webp",
+            "alt": "Investor house",
+            "tag": "Investor house"
+          },
+          {
+            "src": "assets/winter-social.webp",
+            "alt": "Winter social",
+            "tag": "Winter social"
+          }
         ]
       },
       {
         "name": "The work",
         "items": [
-          { "src": "assets/whiteboard-pitch.webp", "alt": "Whiteboard pitch", "tag": "Whiteboard" },
-          { "src": "assets/meeting-room-glass.webp", "alt": "Meeting room", "tag": "Meeting room" },
-          { "src": "assets/kitchen-counter-build.webp", "alt": "Building at the kitchen counter", "tag": "Building" }
+          {
+            "src": "assets/whiteboard-pitch.webp",
+            "alt": "Whiteboard pitch",
+            "tag": "Whiteboard"
+          },
+          {
+            "src": "assets/meeting-room-glass.webp",
+            "alt": "Meeting room",
+            "tag": "Meeting room"
+          },
+          {
+            "src": "assets/kitchen-counter-build.webp",
+            "alt": "Building at the kitchen counter",
+            "tag": "Building"
+          }
         ]
       }
     ],
     "facesLabel": "Founders",
     "faces": [
-      { "src": "assets/founder-01.webp", "alt": "Founder portrait" },
-      { "src": "assets/founder-06.webp", "alt": "Founder portrait" },
-      { "src": "assets/founder-09.webp", "alt": "Founder portrait" },
-      { "src": "assets/founder-16.webp", "alt": "Founder portrait" }
+      {
+        "src": "assets/founder-01.webp",
+        "alt": "Founder portrait"
+      },
+      {
+        "src": "assets/founder-06.webp",
+        "alt": "Founder portrait"
+      },
+      {
+        "src": "assets/founder-09.webp",
+        "alt": "Founder portrait"
+      },
+      {
+        "src": "assets/founder-16.webp",
+        "alt": "Founder portrait"
+      }
     ],
     "style": [
-      { "label": "Subject", "value": "Real people at real moments — founders presenting, rooms mid-conversation, the city the studio works from." },
-      { "label": "Light", "value": "Ambient and honest. Event light as it was; no strobes, no staging." },
-      { "label": "Treatment", "value": "A gradient scrim (ink 0.5 → 0.85, vertical) whenever type sits on the image." },
-      { "label": "Gradients", "value": "Solid variants for flat backgrounds, alpha variants layered over photos." }
+      {
+        "label": "Subject",
+        "value": "Real people at real moments — founders presenting, rooms mid-conversation, the city the studio works from."
+      },
+      {
+        "label": "Light",
+        "value": "Ambient and honest. Event light as it was; no strobes, no staging."
+      },
+      {
+        "label": "Treatment",
+        "value": "A gradient scrim (ink 0.5 → 0.85, vertical) whenever type sits on the image."
+      },
+      {
+        "label": "Gradients",
+        "value": "Solid variants for flat backgrounds, alpha variants layered over photos."
+      }
     ],
     "dos": [
       "Photography from the studio's own library.",
@@ -196,31 +401,59 @@
       "No faces cropped mid-expression."
     ],
     "signatures": [
-      { "name": "Flip-clock countdown", "note": "Deadline tiles, baked at render time — regenerate the morning you post." },
-      { "name": "Fanned avatars", "note": "The overlapping headshot strip for community and batch posts." },
-      { "name": "Boarding-pass ticket", "note": "The event-invite card: perforation, stub, and all." },
-      { "name": "Phase chips", "note": "The five-color scale marking program phases and staged sequences." }
+      {
+        "name": "Flip-clock countdown",
+        "note": "Deadline tiles, baked at render time — regenerate the morning you post."
+      },
+      {
+        "name": "Fanned avatars",
+        "note": "The overlapping headshot strip for community and batch posts."
+      },
+      {
+        "name": "Boarding-pass ticket",
+        "note": "The event-invite card: perforation, stub, and all."
+      },
+      {
+        "name": "Phase chips",
+        "note": "The five-color scale marking program phases and staged sequences."
+      }
     ]
   },
-
   "messaging": {
     "intro": "How Builders sounds — on the site, in posts, at events. This chapter is what downstream tools read first.",
     "voice": {
       "primary": "Direct, confident, builder-to-builder.",
       "style": "Short declaratives. Concrete numbers and dates. The studio talks like a founder who has shipped, not like a fund that observes. One serif-italic flourish per asset — the emphasis, never the whole line."
     },
-    "avoid": ["Hype adjectives", "Vague timelines", "Fund-speak"],
-    "prefer": ["Concrete dates", "Named events", "Plain verbs"],
+    "avoid": [
+      "Hype adjectives",
+      "Vague timelines",
+      "Fund-speak"
+    ],
+    "prefer": [
+      "Concrete dates",
+      "Named events",
+      "Plain verbs"
+    ],
     "formula": {
-      "pattern": "[KICKER IN DM MONO] + [Declarative in Favorit XB, one serif-italic emphasis]",
+      "pattern": "[KICKER IN DM MONO] + [Declarative in Stack Sans Headline 700, one serif-italic emphasis]",
       "example": "Where <em>bold founders</em> build stellar companies.",
       "guidance": "<b>Supporting copy:</b> what happens, when, and for whom — three sentences at most. <b>CTA:</b> a date beats an adjective (“Applications close August 15” over “Apply now”)."
     },
     "claimsLabel": "What we talk about",
     "claims": [
-      { "stat": "10 weeks", "label": "The program — idea to company, in the studio, on a clock." },
-      { "stat": "Staged", "label": "Capital released as milestones land, not up front." },
-      { "stat": "VSI", "label": "The venture intelligence platform underneath every venture." }
+      {
+        "stat": "10 weeks",
+        "label": "The program — idea to company, in the studio, on a clock."
+      },
+      {
+        "stat": "Staged",
+        "label": "Capital released as milestones land, not up front."
+      },
+      {
+        "stat": "VSI",
+        "label": "The venture intelligence platform underneath every venture."
+      }
     ],
     "headlines": [
       "Where <em>bold founders</em> build stellar companies.",
@@ -238,6 +471,5 @@
       "Don't stack more than one idea per sentence."
     ]
   },
-
   "updatedAt": "2026-08-26"
 }

@@ -56,6 +56,8 @@ CSS font stacks per role. Always end each stack with a real system fallback.
 | `flourish` | The italic/serif accent voice. Reuse `body` if the brand has none. |
 | `mono` | Kickers, labels, code. |
 | `displayTracking` | Letter-spacing for display type, e.g. `-.022em`. |
+| `displayWeight` | Weight for display type, e.g. `700`. Set it explicitly: a variable family can serve display and body at once, and then the family name alone cannot tell them apart. |
+| `bodyWeight` | Weight for body copy, e.g. `400`. |
 
 ## `fonts`
 

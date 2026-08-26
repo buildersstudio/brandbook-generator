@@ -214,6 +214,14 @@ for (const page of pages) {
 writeFileSync(join(outDir, 'style.css'), render(readFileSync(join(tplDir, 'style.css'), 'utf8'), [data]));
 copyFileSync(join(tplDir, 'toolbar.js'), join(outDir, 'toolbar.js'));
 
+/* The toolkit dock's own chrome — shared across every Builders tool, so it lives
+   beside the book rather than inside the brand's assets/. */
+const tkOut = join(outDir, 'toolkit');
+mkdirSync(tkOut, { recursive: true });
+for (const f of readdirSync(join(tplDir, 'toolkit'))) {
+  copyFileSync(join(tplDir, 'toolkit', f), join(tkOut, f));
+}
+
 console.log(`✓ ${data.brand.name} brandbook — ${pages.length} pages -> ${outDir}`);
 const assets = join(outDir, 'assets');
 if (!existsSync(assets)) {

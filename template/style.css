@@ -6,12 +6,12 @@
   --bg:#0e0f10; --panel:#141516; --panel2:#17181a; --line:#26282b; --line2:#2e3134;
   --txt:#e9ebee; --mut:#6b7075; --mut2:#9aa0a6; --soft:#c7cace;
   /* from the brand book */
-  --deep:#05060C; --cream:#FAF7F2; --bink:#101015;
-  --accent:#8193FF; --green:#4AEEB0;
+  --deep:{{theme.deep}}; --cream:{{theme.cream}}; --bink:{{theme.ink}};
+  --accent:{{theme.accent}}; --green:{{theme.ok}};
   /* type roles, from the brand book */
-  --f-display:'Favorit XB', 'Inter', system-ui, sans-serif; --f-body:'Favorit', 'Inter', system-ui, sans-serif;
-  --f-flourish:'Instrument Serif', Georgia, serif; --f-mono:'DM Mono', ui-monospace, monospace;
-  --ls-display:-.022em;
+  --f-display:{{type.display}}; --f-body:{{type.body}};
+  --f-flourish:{{type.flourish}}; --f-mono:{{type.mono}};
+  --ls-display:{{type.displayTracking}};
 }
 body { background:var(--bg); color:var(--txt); font-family:Inter,system-ui,sans-serif;
        -webkit-font-smoothing:antialiased }

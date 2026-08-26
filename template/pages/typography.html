@@ -1,0 +1,22 @@
+    <div class="sec-lbl">03</div>
+    <h1>Typography</h1>
+    <p class="sec-sub">{{typography.intro}}</p>
+    <div class="grid-2">
+      {{#each typography.fonts}}<div class="font-card">
+        <div class="role">{{.role}}</div><div class="fname">{{.name}}</div>
+        <div class="spec {{.cls}}"{{#if .sampleSize}} style="font-size:{{.sampleSize}}"{{/if}}>{{.sample}}</div>
+        <div class="stack">{{.stack}}</div>
+      </div>
+      {{/each}}
+    </div>
+    <h3>Type scale</h3>
+    <div class="card" style="padding:4px 6px"><table class="scale-t">
+      {{#each typography.scale}}<tr><td class="tn">{{.name}}</td><td class="tv">{{.spec}}</td><td class="tp {{.cls}}" style="font-size:{{.previewSize}}">{{$typography.sampleLine}}</td></tr>
+      {{/each}}
+    </table></div>
+    {{#if typography.pairing}}<h3>Pairing example</h3>
+    <div class="card pair">
+      <div class="pk">{{typography.pairing.kicker}}</div>
+      <div class="ph">{{{typography.pairing.headline}}}</div>
+      <div class="pb">{{typography.pairing.body}}</div>
+    </div>{{/if}}

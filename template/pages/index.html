@@ -1,0 +1,20 @@
+    <div class="hero"{{#if brand.heroImage}} style="background-image:url('{{brand.heroImage}}')"{{/if}}>
+      <div class="kick">Brand guidelines{{#if brand.year}} · {{brand.year}}{{/if}}</div>
+      {{#if logo.inverse.src}}<img class="wm" src="{{logo.inverse.src}}" alt="{{brand.name}}">{{/if}}
+      {{#unless logo.inverse.src}}<div class="wm xb" style="font-size:34px;color:#fff;margin:22px 0 16px">{{brand.name}}</div>{{/unless}}
+      <p>{{{brand.description}}}</p>
+    </div>
+    <div class="meta-row">
+      <div class="card"><div class="k">Tagline</div><div class="v">{{brand.tagline}}</div></div>
+      <div class="card"><div class="k">One-liner</div><div class="v">{{brand.oneLiner}}</div></div>
+      <div class="card"><div class="k">Website</div><div class="v"><a href="{{brand.website}}" target="_blank" rel="noopener">{{brand.websiteLabel}}</a></div></div>
+    </div>
+    <h3>Chapters</h3>
+    <div class="toc">
+      <a href="logo.html"><span class="tn">01</span><span class="tt">Logo</span><span class="td">{{toc.logo}}</span></a>
+      <a href="colors.html"><span class="tn">02</span><span class="tt">Colors</span><span class="td">{{toc.colors}}</span></a>
+      <a href="typography.html"><span class="tn">03</span><span class="tt">Typography</span><span class="td">{{toc.typography}}</span></a>
+      <a href="spacing.html"><span class="tn">04</span><span class="tt">Spacing &amp; Layout</span><span class="td">{{toc.spacing}}</span></a>
+      <a href="photography.html"><span class="tn">05</span><span class="tt">Photography</span><span class="td">{{toc.photography}}</span></a>
+      <a href="messaging.html"><span class="tn">06</span><span class="tt">Messaging</span><span class="td">{{toc.messaging}}</span></a>
+    </div>

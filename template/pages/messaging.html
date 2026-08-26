@@ -1,0 +1,43 @@
+    <div class="sec-lbl">06</div>
+    <h1>Messaging</h1>
+    <p class="sec-sub">{{messaging.intro}}</p>
+    <h3>Voice</h3>
+    <div class="card voice">
+      <div class="vp">{{messaging.voice.primary}}</div>
+      <div class="vs">{{messaging.voice.style}}</div>
+    </div>
+    <div class="ap">
+      <div class="card avoid"><div class="h">Avoid</div><div class="pill-list">
+        {{#each messaging.avoid}}<span>{{.}}</span>{{/each}}
+      </div></div>
+      <div class="card prefer"><div class="h">Prefer</div><div class="pill-list">
+        {{#each messaging.prefer}}<span>{{.}}</span>{{/each}}
+      </div></div>
+    </div>
+    <h3>Headline formula</h3>
+    <div class="card formula">
+      <div class="f">{{messaging.formula.pattern}}</div>
+      <div class="ex">{{{messaging.formula.example}}}</div>
+      <div class="g">{{{messaging.formula.guidance}}}</div>
+    </div>
+    {{#if messaging.claims}}<h3>{{messaging.claimsLabel}}</h3>
+    <div class="claims">
+      {{#each messaging.claims}}<div class="claim"><div class="st">{{.stat}}</div><div class="lb">{{.label}}</div></div>
+      {{/each}}
+    </div>{{/if}}
+    {{#if messaging.headlines}}<h3>Headline examples</h3>
+    <div class="heads">
+      {{#each messaging.headlines}}<div class="hx">{{{.}}}</div>
+      {{/each}}
+    </div>{{/if}}
+    <h3>Rules</h3>
+    <div class="dd">
+      <div class="card do"><div class="h">Do</div><ul>
+        {{#each messaging.dos}}<li>{{{.}}}</li>
+        {{/each}}
+      </ul></div>
+      <div class="card dont"><div class="h">Don't</div><ul>
+        {{#each messaging.donts}}<li>{{{.}}}</li>
+        {{/each}}
+      </ul></div>
+    </div>

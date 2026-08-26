@@ -1,0 +1,18 @@
+    <div class="sec-lbl">04</div>
+    <h1>Spacing &amp; Layout</h1>
+    <p class="sec-sub">{{spacing.intro}}</p>
+    <div class="three">
+      <div class="card"><h3>Spacing</h3><table class="tok-t">
+        {{#each spacing.spacing}}<tr><td class="tn">{{.name}}</td><td class="tv">{{.value}}</td><td><div class="bar" style="width:{{.demo}}"></div></td></tr>
+        {{/each}}
+      </table></div>
+      <div class="card"><h3>Border radius</h3><table class="tok-t">
+        {{#each spacing.radius}}<tr><td class="tn">{{.name}}</td><td class="tv">{{.value}}</td><td><div class="rad-demo" style="border-radius:{{.demo}}"></div></td></tr>
+        {{/each}}
+      </table></div>
+      <div class="card"><h3>Shadows</h3><table class="tok-t">
+        {{#each spacing.shadows}}<tr><td class="tn">{{.name}}</td><td class="tv">{{.value}}</td><td><div class="sh-demo" style="{{.demo}}"></div></td></tr>
+        {{/each}}
+      </table></div>
+    </div>
+    {{#if spacing.note}}<div class="note">{{spacing.note}}</div>{{/if}}

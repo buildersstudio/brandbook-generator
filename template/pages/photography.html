@@ -1,0 +1,35 @@
+    <div class="sec-lbl">05</div>
+    <h1>Photography</h1>
+    <p class="sec-sub">{{photography.intro}}</p>
+    {{#each photography.groups}}<h3>{{.name}}</h3>
+    <div class="photos">
+      {{#each .items}}<div class="photo"><img src="{{.src}}" alt="{{.alt}}">{{#if .tag}}<span class="tag">{{.tag}}</span>{{/if}}</div>
+      {{/each}}
+    </div>
+    {{/each}}
+    {{#if photography.faces}}<h3>{{photography.facesLabel}}</h3>
+    <div class="faces">
+      {{#each photography.faces}}<div class="face"><img src="{{.src}}" alt="{{.alt}}"></div>
+      {{/each}}
+    </div>{{/if}}
+    <h3>Style direction</h3>
+    <div class="card"><table class="kv">
+      {{#each photography.style}}<tr><td class="k">{{.label}}</td><td class="v">{{.value}}</td></tr>
+      {{/each}}
+    </table></div>
+    <h3>Rules</h3>
+    <div class="dd">
+      <div class="card do"><div class="h">Do</div><ul>
+        {{#each photography.dos}}<li>{{.}}</li>
+        {{/each}}
+      </ul></div>
+      <div class="card dont"><div class="h">Don't</div><ul>
+        {{#each photography.donts}}<li>{{.}}</li>
+        {{/each}}
+      </ul></div>
+    </div>
+    {{#if photography.signatures}}<h3>Signature elements</h3>
+    <div class="sigs">
+      {{#each photography.signatures}}<div class="sig"><b>{{.name}}</b><span>{{.note}}</span></div>
+      {{/each}}
+    </div>{{/if}}

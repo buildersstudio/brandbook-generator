@@ -1,0 +1,35 @@
+    <div class="sec-lbl">01</div>
+    <h1>Logo</h1>
+    <p class="sec-sub">{{logo.intro}}</p>
+    <div class="grid-3">
+      <div class="logo-tile">
+        <div class="stage" style="background:var(--cream)"><img src="{{logo.primary.src}}" alt="{{logo.primary.alt}}"></div>
+        <div class="cap"><b>Primary</b><span>{{logo.primary.on}}</span></div>
+      </div>
+      <div class="logo-tile">
+        <div class="stage" style="background:var(--deep)"><img src="{{logo.inverse.src}}" alt="{{logo.inverse.alt}}"></div>
+        <div class="cap"><b>Inverse</b><span>{{logo.inverse.on}}</span></div>
+      </div>
+      {{#if logo.mark}}<div class="logo-tile">
+        <div class="stage" style="background:var(--deep)">
+          {{#if logo.mark.path}}<svg class="spark" viewBox="{{logo.mark.viewBox}}" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="{{logo.mark.alt}}">
+            <path d="{{logo.mark.path}}"/>
+          </svg>{{/if}}
+          {{#unless logo.mark.path}}<img src="{{logo.mark.src}}" alt="{{logo.mark.alt}}" style="height:32px">{{/unless}}
+        </div>
+        <div class="cap"><b>{{logo.mark.label}}</b><span>{{logo.mark.use}}</span></div>
+      </div>{{/if}}
+    </div>
+    <h3>Clear space</h3>
+    <div class="card rule-card">{{logo.clearSpace}}</div>
+    <h3>Rules</h3>
+    <div class="dd">
+      <div class="card do"><div class="h">Do</div><ul>
+        {{#each logo.dos}}<li>{{.}}</li>
+        {{/each}}
+      </ul></div>
+      <div class="card dont"><div class="h">Don't</div><ul>
+        {{#each logo.donts}}<li>{{.}}</li>
+        {{/each}}
+      </ul></div>
+    </div>

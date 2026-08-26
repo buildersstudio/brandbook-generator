@@ -1,0 +1,20 @@
+    <div class="sec-lbl">02</div>
+    <h1>Colors</h1>
+    <p class="sec-sub">{{colors.intro}}</p>
+    {{#each colors.groups}}<div class="cgroup">
+      <div class="gname">{{.name}}</div>
+      <div class="gdesc">{{.description}}</div>
+      <div class="swatches">
+        {{#each .swatches}}<div class="sw"><div class="chip" style="background:{{.value}}"></div><div class="info"><div class="nm">{{.name}}</div><div class="hx">{{.value}}</div><div class="use">{{.usage}}</div></div></div>
+        {{/each}}
+      </div>
+    </div>
+    {{/each}}
+    {{#if colors.scale}}<div class="cgroup">
+      <div class="gname">{{colors.scale.name}}</div>
+      <div class="gdesc">{{colors.scale.description}}</div>
+      <div class="phases">
+        {{#each colors.scale.values}}<i style="background:{{.}}"></i>{{/each}}
+      </div>
+    </div>{{/if}}
+    {{#if colors.note}}<div class="note">{{colors.note}}</div>{{/if}}

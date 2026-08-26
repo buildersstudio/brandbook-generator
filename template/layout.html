@@ -1,0 +1,27 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{_title}}</title>
+{{#if fonts.googleFontsUrl}}<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="{{{fonts.googleFontsUrl}}}" rel="stylesheet">{{/if}}
+{{#if fonts.faces}}<style>
+  /* Licensed faces are loaded from the brand's own domain, never vendored here. */
+{{#each fonts.faces}}  @font-face { font-family:'{{.family}}'; src:url('{{.url}}') format('{{.format}}');{{#if .style}} font-style:{{.style}};{{/if}} font-display:swap }
+{{/each}}</style>{{/if}}
+<link rel="stylesheet" href="style.css">
+</head><body>
+<div class="shell">
+  <aside>
+    <div class="lbl">Brandbook</div>
+    <div class="vlogo">{{#if logo.inverse.src}}<img src="{{logo.inverse.src}}" alt="{{brand.name}} wordmark">{{/if}}{{#unless logo.inverse.src}}<b style="font-family:var(--f-display);font-size:15px;color:#fff">{{brand.name}}</b>{{/unless}}</div>
+    <nav>
+{{{_nav}}}
+    </nav>
+    <div class="foot">Generated with Brandbook Generator<br>by Builders Studio · v1</div>
+  </aside>
+  <main>
+{{{_body}}}
+{{{_pager}}}
+  </main>
+</div>
+<script src="toolbar.js" defer></script>
+</body></html>

@@ -1,0 +1,14 @@
+{
+  "name": "brandbook-generator",
+  "version": "1.0.0",
+  "private": false,
+  "description": "Turn a founder's website, deck or asset folder into a complete brandbook site.",
+  "license": "MIT",
+  "type": "module",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "render": "node render.mjs",
+    "serve": "./serve.sh",
+    "test": "node --test \"tests/**/*.test.mjs\""
+  }
+}

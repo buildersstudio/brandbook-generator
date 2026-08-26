@@ -14,6 +14,12 @@ Conventions used below:
 
 ---
 
+## `version` — required
+
+| field | type | notes |
+|---|---|---|
+| `version` | number | Schema version this book targets. `1` today. A tool reading the book should check it before trusting the shape, so a future breaking change is detectable rather than silent. |
+
 ## `brand` — required
 
 | field | type | notes |

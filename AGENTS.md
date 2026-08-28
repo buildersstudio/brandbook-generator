@@ -82,6 +82,7 @@ assets/                logos and imagery, referenced from the JSON
   library/NNN.jpg      the numbered photo library — position IS the number,
                        so append only, never reorder (see schema.md)
 render.mjs             the renderer (zero deps, Node 18+)
+add-photos.mjs         append photos to the library (thumbnails + numbering)
 template/
   layout.html          the shell: head, sidebar, pager
   pages/*.html         one template per chapter

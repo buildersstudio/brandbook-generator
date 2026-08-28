@@ -135,7 +135,8 @@ number.
 
 **The number is the position in `items[]`, so the order is a contract.**
 
-- **Append** new photographs at the end. Always safe.
+- **Append** new photographs at the end. Always safe — `node add-photos.mjs <image…>` does the
+  thumbnailing, numbering and JSON update for you, and refuses to run if the numbering has drifted.
 - **Never reorder or delete** from the middle — every reference to a later number silently shifts
   to a different photograph. To retire one, leave its entry in place and note it in `alt`.
 - `file` is the original filename, so a full-resolution copy stays traceable back to the source

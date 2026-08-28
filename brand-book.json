@@ -35,7 +35,7 @@
     "colors": "Two grounds, four accents, the phase scale.",
     "typography": "Stack Sans Headline, Instrument Serif, DM Mono.",
     "spacing": "Grid, radii, shadows, the scrim.",
-    "photography": "Real moments, gradients, signature elements.",
+    "photography": "The whole library, numbered for reference.",
     "messaging": "Voice, headline formula, the hard bans."
   },
   "logo": {
@@ -295,83 +295,708 @@
     ]
   },
   "photography": {
-    "intro": "Real studio photography only — events, founders, the work. When there is no photo, the brand gradients take its place.",
-    "groups": [
-      {
-        "name": "Events",
-        "items": [
-          {
-            "src": "assets/demo-night.webp",
-            "alt": "Demo night",
-            "tag": "Demo night"
-          },
-          {
-            "src": "assets/founder-weekend.webp",
-            "alt": "Founder weekend",
-            "tag": "Founder weekend"
-          },
-          {
-            "src": "assets/fireside.webp",
-            "alt": "Fireside",
-            "tag": "Fireside"
-          },
-          {
-            "src": "assets/cto-social.webp",
-            "alt": "CTO social",
-            "tag": "CTO social"
-          },
-          {
-            "src": "assets/investor-house.webp",
-            "alt": "Investor house",
-            "tag": "Investor house"
-          },
-          {
-            "src": "assets/winter-social.webp",
-            "alt": "Winter social",
-            "tag": "Winter social"
-          }
-        ]
-      },
-      {
-        "name": "The work",
-        "items": [
-          {
-            "src": "assets/whiteboard-pitch.webp",
-            "alt": "Whiteboard pitch",
-            "tag": "Whiteboard"
-          },
-          {
-            "src": "assets/meeting-room-glass.webp",
-            "alt": "Meeting room",
-            "tag": "Meeting room"
-          },
-          {
-            "src": "assets/kitchen-counter-build.webp",
-            "alt": "Building at the kitchen counter",
-            "tag": "Building"
-          }
-        ]
-      }
-    ],
-    "facesLabel": "Founders",
-    "faces": [
-      {
-        "src": "assets/founder-01.webp",
-        "alt": "Founder portrait"
-      },
-      {
-        "src": "assets/founder-06.webp",
-        "alt": "Founder portrait"
-      },
-      {
-        "src": "assets/founder-09.webp",
-        "alt": "Founder portrait"
-      },
-      {
-        "src": "assets/founder-16.webp",
-        "alt": "Founder portrait"
-      }
-    ],
+    "intro": "The studio's own photography — the work, the events, the people, and the brand imagery that stands in for them. Never stock.",
+    "library": {
+      "label": "Library",
+      "note": "Every photograph in the studio library, numbered. The numbers are stable — reference them by number when briefing another tool (“use 12 and 79 for that carousel”). Click a tile to copy its number.",
+      "items": [
+        {
+          "src": "assets/library/001.jpg",
+          "alt": "Bar founder",
+          "file": "bar-founder.webp"
+        },
+        {
+          "src": "assets/library/002.jpg",
+          "alt": "Investor house talk",
+          "file": "investor-house-talk.webp"
+        },
+        {
+          "src": "assets/library/003.jpg",
+          "alt": "Kitchen counter build",
+          "file": "kitchen-counter-build.webp"
+        },
+        {
+          "src": "assets/library/004.jpg",
+          "alt": "Meeting room glass",
+          "file": "meeting-room-glass.webp"
+        },
+        {
+          "src": "assets/library/005.jpg",
+          "alt": "One on one",
+          "file": "one-on-one.webp"
+        },
+        {
+          "src": "assets/library/006.jpg",
+          "alt": "Whiteboard pitch",
+          "file": "whiteboard-pitch.webp"
+        },
+        {
+          "src": "assets/library/007.jpg",
+          "alt": "Whiteboard two",
+          "file": "whiteboard-two.webp"
+        },
+        {
+          "src": "assets/library/008.jpg",
+          "alt": "Astronaut",
+          "file": "astronaut.webp"
+        },
+        {
+          "src": "assets/library/009.jpg",
+          "alt": "Dawn silhouettes",
+          "file": "dawn-silhouettes.webp"
+        },
+        {
+          "src": "assets/library/010.jpg",
+          "alt": "Rotterdam bridge",
+          "file": "rotterdam-bridge.webp"
+        },
+        {
+          "src": "assets/library/011.jpg",
+          "alt": "Rotterdam dusk",
+          "file": "rotterdam-dusk.webp"
+        },
+        {
+          "src": "assets/library/012.jpg",
+          "alt": "Run field",
+          "file": "run-field.webp"
+        },
+        {
+          "src": "assets/library/013.jpg",
+          "alt": "Run sunset",
+          "file": "run-sunset.webp"
+        },
+        {
+          "src": "assets/library/014.jpg",
+          "alt": "Channy",
+          "file": "channy-1.webp"
+        },
+        {
+          "src": "assets/library/015.jpg",
+          "alt": "Darko markovic",
+          "file": "darko-markovic-1.webp"
+        },
+        {
+          "src": "assets/library/016.jpg",
+          "alt": "Giorgio orsucci",
+          "file": "giorgio-orsucci-1.webp"
+        },
+        {
+          "src": "assets/library/017.jpg",
+          "alt": "Julia bramer",
+          "file": "julia-bramer-1.webp"
+        },
+        {
+          "src": "assets/library/018.jpg",
+          "alt": "Megan lee",
+          "file": "megan-lee-1.webp"
+        },
+        {
+          "src": "assets/library/019.jpg",
+          "alt": "Michael van lier",
+          "file": "michael-van-lier-1.webp"
+        },
+        {
+          "src": "assets/library/020.jpg",
+          "alt": "Mohammad rajabi",
+          "file": "mohammad-rajabi-1.webp"
+        },
+        {
+          "src": "assets/library/021.jpg",
+          "alt": "Sharon klaver",
+          "file": "sharon-klaver-1.webp"
+        },
+        {
+          "src": "assets/library/022.jpg",
+          "alt": "Builders studio capital hq",
+          "file": "builders-studio-capital-hq.webp"
+        },
+        {
+          "src": "assets/library/023.jpg",
+          "alt": "Built in europe flag",
+          "file": "built-in-europe-flag.webp"
+        },
+        {
+          "src": "assets/library/024.jpg",
+          "alt": "Evidence speaks team",
+          "file": "evidence-speaks-team.webp"
+        },
+        {
+          "src": "assets/library/025.jpg",
+          "alt": "Find the signal pod",
+          "file": "find-the-signal-pod.webp"
+        },
+        {
+          "src": "assets/library/026.jpg",
+          "alt": "Vsi demo home",
+          "file": "vsi-demo-home.webp"
+        },
+        {
+          "src": "assets/library/027.jpg",
+          "alt": "Vsi demo signals",
+          "file": "vsi-demo-signals.webp"
+        },
+        {
+          "src": "assets/library/028.jpg",
+          "alt": "Agentic",
+          "file": "01-agentic.webp"
+        },
+        {
+          "src": "assets/library/029.jpg",
+          "alt": "Procurement",
+          "file": "02-procurement.webp"
+        },
+        {
+          "src": "assets/library/030.jpg",
+          "alt": "Compliance",
+          "file": "03-compliance.webp"
+        },
+        {
+          "src": "assets/library/031.jpg",
+          "alt": "Logistics",
+          "file": "04-logistics.webp"
+        },
+        {
+          "src": "assets/library/032.jpg",
+          "alt": "Factory",
+          "file": "05-factory.webp"
+        },
+        {
+          "src": "assets/library/033.jpg",
+          "alt": "Energy",
+          "file": "06-energy.webp"
+        },
+        {
+          "src": "assets/library/034.jpg",
+          "alt": "Work",
+          "file": "07-work.webp"
+        },
+        {
+          "src": "assets/library/035.jpg",
+          "alt": "Boat crew",
+          "file": "boat-crew.webp"
+        },
+        {
+          "src": "assets/library/036.jpg",
+          "alt": "Boat harbour",
+          "file": "boat-harbour.webp"
+        },
+        {
+          "src": "assets/library/037.jpg",
+          "alt": "Founder",
+          "file": "founder-01.webp"
+        },
+        {
+          "src": "assets/library/038.jpg",
+          "alt": "Founder",
+          "file": "founder-02.webp"
+        },
+        {
+          "src": "assets/library/039.jpg",
+          "alt": "Founder",
+          "file": "founder-03.webp"
+        },
+        {
+          "src": "assets/library/040.jpg",
+          "alt": "Founder",
+          "file": "founder-04.webp"
+        },
+        {
+          "src": "assets/library/041.jpg",
+          "alt": "Founder",
+          "file": "founder-06.webp"
+        },
+        {
+          "src": "assets/library/042.jpg",
+          "alt": "Founder",
+          "file": "founder-07.webp"
+        },
+        {
+          "src": "assets/library/043.jpg",
+          "alt": "Founder",
+          "file": "founder-08.webp"
+        },
+        {
+          "src": "assets/library/044.jpg",
+          "alt": "Founder",
+          "file": "founder-09.webp"
+        },
+        {
+          "src": "assets/library/045.jpg",
+          "alt": "Founder",
+          "file": "founder-10.webp"
+        },
+        {
+          "src": "assets/library/046.jpg",
+          "alt": "Founder",
+          "file": "founder-11.webp"
+        },
+        {
+          "src": "assets/library/047.jpg",
+          "alt": "Founder",
+          "file": "founder-12.webp"
+        },
+        {
+          "src": "assets/library/048.jpg",
+          "alt": "Founder",
+          "file": "founder-13.webp"
+        },
+        {
+          "src": "assets/library/049.jpg",
+          "alt": "Founder",
+          "file": "founder-14.webp"
+        },
+        {
+          "src": "assets/library/050.jpg",
+          "alt": "Founder",
+          "file": "founder-15.webp"
+        },
+        {
+          "src": "assets/library/051.jpg",
+          "alt": "Founder",
+          "file": "founder-16.webp"
+        },
+        {
+          "src": "assets/library/052.jpg",
+          "alt": "Founder",
+          "file": "founder-17.webp"
+        },
+        {
+          "src": "assets/library/053.jpg",
+          "alt": "Launch hero",
+          "file": "launch-hero.webp"
+        },
+        {
+          "src": "assets/library/054.jpg",
+          "alt": "Rocket pad",
+          "file": "rocket-pad.webp"
+        },
+        {
+          "src": "assets/library/055.jpg",
+          "alt": "Fireside",
+          "file": "fireside.webp"
+        },
+        {
+          "src": "assets/library/056.jpg",
+          "alt": "Founder weekend",
+          "file": "founder-weekend.webp"
+        },
+        {
+          "src": "assets/library/057.jpg",
+          "alt": "Builders core team x3 hq",
+          "file": "builders-core-team-2026-x3-hq.webp"
+        },
+        {
+          "src": "assets/library/058.jpg",
+          "alt": "Bih gallery",
+          "file": "bih-gallery-01.webp"
+        },
+        {
+          "src": "assets/library/059.jpg",
+          "alt": "Bih gallery",
+          "file": "bih-gallery-02.webp"
+        },
+        {
+          "src": "assets/library/060.jpg",
+          "alt": "Bih gallery",
+          "file": "bih-gallery-03.webp"
+        },
+        {
+          "src": "assets/library/061.jpg",
+          "alt": "Bih gallery",
+          "file": "bih-gallery-05.webp"
+        },
+        {
+          "src": "assets/library/062.jpg",
+          "alt": "Bih gallery",
+          "file": "bih-gallery-06.webp"
+        },
+        {
+          "src": "assets/library/063.jpg",
+          "alt": "Bih gallery",
+          "file": "bih-gallery-07.webp"
+        },
+        {
+          "src": "assets/library/064.jpg",
+          "alt": "Bih gallery",
+          "file": "bih-gallery-08.webp"
+        },
+        {
+          "src": "assets/library/065.jpg",
+          "alt": "Bih gallery",
+          "file": "bih-gallery-09.webp"
+        },
+        {
+          "src": "assets/library/066.jpg",
+          "alt": "Bih gallery",
+          "file": "bih-gallery-10.webp"
+        },
+        {
+          "src": "assets/library/067.jpg",
+          "alt": "Bih gallery",
+          "file": "bih-gallery-11.webp"
+        },
+        {
+          "src": "assets/library/068.jpg",
+          "alt": "Bih gallery",
+          "file": "bih-gallery-12.webp"
+        },
+        {
+          "src": "assets/library/069.jpg",
+          "alt": "Bih gallery",
+          "file": "bih-gallery-13.webp"
+        },
+        {
+          "src": "assets/library/070.jpg",
+          "alt": "Bih gallery",
+          "file": "bih-gallery-14.webp"
+        },
+        {
+          "src": "assets/library/071.jpg",
+          "alt": "Bih gallery",
+          "file": "bih-gallery-15.webp"
+        },
+        {
+          "src": "assets/library/072.jpg",
+          "alt": "Bih card",
+          "file": "bih-card-1.webp"
+        },
+        {
+          "src": "assets/library/073.jpg",
+          "alt": "Bih card",
+          "file": "bih-card-2.webp"
+        },
+        {
+          "src": "assets/library/074.jpg",
+          "alt": "Bih card",
+          "file": "bih-card-4.webp"
+        },
+        {
+          "src": "assets/library/075.jpg",
+          "alt": "Investor house next",
+          "file": "investor-house-next.webp"
+        },
+        {
+          "src": "assets/library/076.jpg",
+          "alt": "Cto events",
+          "file": "cto-events-2.webp"
+        },
+        {
+          "src": "assets/library/077.jpg",
+          "alt": "Cto events",
+          "file": "cto-events-4.webp"
+        },
+        {
+          "src": "assets/library/078.jpg",
+          "alt": "Cto events",
+          "file": "cto-events-5.webp"
+        },
+        {
+          "src": "assets/library/079.jpg",
+          "alt": "Cto winter bbq25",
+          "file": "cto_winter_bbq25.webp"
+        },
+        {
+          "src": "assets/library/080.jpg",
+          "alt": "Navigator ruben kruit",
+          "file": "navigator-ruben-kruit.webp"
+        },
+        {
+          "src": "assets/library/081.jpg",
+          "alt": "Avery",
+          "file": "avery-1.webp"
+        },
+        {
+          "src": "assets/library/082.jpg",
+          "alt": "Avery",
+          "file": "avery-2.webp"
+        },
+        {
+          "src": "assets/library/083.jpg",
+          "alt": "Cortena",
+          "file": "cortena-1.webp"
+        },
+        {
+          "src": "assets/library/084.jpg",
+          "alt": "Cortena",
+          "file": "cortena-2.webp"
+        },
+        {
+          "src": "assets/library/085.jpg",
+          "alt": "Everday",
+          "file": "everday-1.webp"
+        },
+        {
+          "src": "assets/library/086.jpg",
+          "alt": "Everday",
+          "file": "everday-2.webp"
+        },
+        {
+          "src": "assets/library/087.jpg",
+          "alt": "Trigger",
+          "file": "trigger-1.webp"
+        },
+        {
+          "src": "assets/library/088.jpg",
+          "alt": "Trigger",
+          "file": "trigger-2.webp"
+        },
+        {
+          "src": "assets/library/089.jpg",
+          "alt": "Alisher jafarov",
+          "file": "alisher-jafarov.webp"
+        },
+        {
+          "src": "assets/library/090.jpg",
+          "alt": "Bruno pellicci",
+          "file": "bruno-pellicci.webp"
+        },
+        {
+          "src": "assets/library/091.jpg",
+          "alt": "Estefania hernandez",
+          "file": "estefania-hernandez.webp"
+        },
+        {
+          "src": "assets/library/092.jpg",
+          "alt": "Federico motta",
+          "file": "federico-motta.webp"
+        },
+        {
+          "src": "assets/library/093.jpg",
+          "alt": "Hero",
+          "file": "hero-1.webp"
+        },
+        {
+          "src": "assets/library/094.jpg",
+          "alt": "Hero",
+          "file": "hero-2.webp"
+        },
+        {
+          "src": "assets/library/095.jpg",
+          "alt": "Hero",
+          "file": "hero-3.webp"
+        },
+        {
+          "src": "assets/library/096.jpg",
+          "alt": "Hero",
+          "file": "hero-4.webp"
+        },
+        {
+          "src": "assets/library/097.jpg",
+          "alt": "Ai does the work",
+          "file": "ai-does-the-work.webp"
+        },
+        {
+          "src": "assets/library/098.jpg",
+          "alt": "City hill",
+          "file": "city-hill-2.webp"
+        },
+        {
+          "src": "assets/library/099.jpg",
+          "alt": "City hill",
+          "file": "city-hill.webp"
+        },
+        {
+          "src": "assets/library/100.jpg",
+          "alt": "City towers",
+          "file": "city-towers.webp"
+        },
+        {
+          "src": "assets/library/101.jpg",
+          "alt": "Alisher jafarov",
+          "file": "alisher-jafarov-2.webp"
+        },
+        {
+          "src": "assets/library/102.jpg",
+          "alt": "Alisher jafarov",
+          "file": "alisher-jafarov-3.webp"
+        },
+        {
+          "src": "assets/library/103.jpg",
+          "alt": "Alisher jafarov",
+          "file": "alisher-jafarov-4.webp"
+        },
+        {
+          "src": "assets/library/104.jpg",
+          "alt": "Bruno pellicci",
+          "file": "bruno-pellicci-1.webp"
+        },
+        {
+          "src": "assets/library/105.jpg",
+          "alt": "Bruno pellicci",
+          "file": "bruno-pellicci-2.webp"
+        },
+        {
+          "src": "assets/library/106.jpg",
+          "alt": "Bruno pellicci",
+          "file": "bruno-pellicci-3.webp"
+        },
+        {
+          "src": "assets/library/107.jpg",
+          "alt": "Channy",
+          "file": "channy-2.webp"
+        },
+        {
+          "src": "assets/library/108.jpg",
+          "alt": "Channy",
+          "file": "channy-3.webp"
+        },
+        {
+          "src": "assets/library/109.jpg",
+          "alt": "Channy",
+          "file": "channy-4.webp"
+        },
+        {
+          "src": "assets/library/110.jpg",
+          "alt": "Darko markovic",
+          "file": "darko-markovic-2.webp"
+        },
+        {
+          "src": "assets/library/111.jpg",
+          "alt": "Darko markovic",
+          "file": "darko-markovic-3.webp"
+        },
+        {
+          "src": "assets/library/112.jpg",
+          "alt": "Darko markovic",
+          "file": "darko-markovic-4.webp"
+        },
+        {
+          "src": "assets/library/113.jpg",
+          "alt": "Dylan moerland",
+          "file": "dylan-moerland-1.webp"
+        },
+        {
+          "src": "assets/library/114.jpg",
+          "alt": "Dylan moerland",
+          "file": "dylan-moerland-2.webp"
+        },
+        {
+          "src": "assets/library/115.jpg",
+          "alt": "Dylan moerland",
+          "file": "dylan-moerland-3.webp"
+        },
+        {
+          "src": "assets/library/116.jpg",
+          "alt": "Dylan moerland",
+          "file": "dylan-moerland-4.webp"
+        },
+        {
+          "src": "assets/library/117.jpg",
+          "alt": "Estefania hernandez",
+          "file": "estefania-hernandez-1.webp"
+        },
+        {
+          "src": "assets/library/118.jpg",
+          "alt": "Estefania hernandez",
+          "file": "estefania-hernandez-2.webp"
+        },
+        {
+          "src": "assets/library/119.jpg",
+          "alt": "Estefania hernandez",
+          "file": "estefania-hernandez-3.webp"
+        },
+        {
+          "src": "assets/library/120.jpg",
+          "alt": "Estefania hernandez",
+          "file": "estefania-hernandez-4.webp"
+        },
+        {
+          "src": "assets/library/121.jpg",
+          "alt": "Giorgi giorgobiani",
+          "file": "giorgi-giorgobiani-1.webp"
+        },
+        {
+          "src": "assets/library/122.jpg",
+          "alt": "Giorgio orsucci",
+          "file": "giorgio-orsucci-2.webp"
+        },
+        {
+          "src": "assets/library/123.jpg",
+          "alt": "Giorgio orsucci",
+          "file": "giorgio-orsucci-3.webp"
+        },
+        {
+          "src": "assets/library/124.jpg",
+          "alt": "Giorgio orsucci",
+          "file": "giorgio-orsucci-4.webp"
+        },
+        {
+          "src": "assets/library/125.jpg",
+          "alt": "Julia bramer",
+          "file": "julia-bramer-2.webp"
+        },
+        {
+          "src": "assets/library/126.jpg",
+          "alt": "Julia bramer",
+          "file": "julia-bramer-3.webp"
+        },
+        {
+          "src": "assets/library/127.jpg",
+          "alt": "Julia bramer",
+          "file": "julia-bramer-4.webp"
+        },
+        {
+          "src": "assets/library/128.jpg",
+          "alt": "Megan lee",
+          "file": "megan-lee-2.webp"
+        },
+        {
+          "src": "assets/library/129.jpg",
+          "alt": "Megan lee",
+          "file": "megan-lee-3.webp"
+        },
+        {
+          "src": "assets/library/130.jpg",
+          "alt": "Megan lee",
+          "file": "megan-lee-4.webp"
+        },
+        {
+          "src": "assets/library/131.jpg",
+          "alt": "Michael van lier",
+          "file": "michael-van-lier-2.webp"
+        },
+        {
+          "src": "assets/library/132.jpg",
+          "alt": "Michael van lier",
+          "file": "michael-van-lier-3.webp"
+        },
+        {
+          "src": "assets/library/133.jpg",
+          "alt": "Michael van lier",
+          "file": "michael-van-lier-4.webp"
+        },
+        {
+          "src": "assets/library/134.jpg",
+          "alt": "Saunved mutalik",
+          "file": "saunved-mutalik-1.webp"
+        },
+        {
+          "src": "assets/library/135.jpg",
+          "alt": "Sebastian lagemann",
+          "file": "sebastian-lagemann-1.webp"
+        },
+        {
+          "src": "assets/library/136.jpg",
+          "alt": "Seungeun lee",
+          "file": "seungeun-lee-1.webp"
+        },
+        {
+          "src": "assets/library/137.jpg",
+          "alt": "Sharon klaver",
+          "file": "sharon-klaver-2.webp"
+        },
+        {
+          "src": "assets/library/138.jpg",
+          "alt": "Sharon klaver",
+          "file": "sharon-klaver-3.webp"
+        },
+        {
+          "src": "assets/library/139.jpg",
+          "alt": "Sharon klaver",
+          "file": "sharon-klaver-4.webp"
+        }
+      ]
+    },
     "style": [
       {
         "label": "Subject",

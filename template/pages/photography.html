@@ -1,15 +1,10 @@
     <div class="sec-lbl">05</div>
     <h1>Photography</h1>
     <p class="sec-sub">{{photography.intro}}</p>
-    {{#each photography.groups}}<h3>{{.name}}</h3>
-    <div class="photos">
-      {{#each .items}}<div class="photo"><img src="{{.src}}" alt="{{.alt}}">{{#if .tag}}<span class="tag">{{.tag}}</span>{{/if}}</div>
-      {{/each}}
-    </div>
-    {{/each}}
-    {{#if photography.faces}}<h3>{{photography.facesLabel}}</h3>
-    <div class="faces">
-      {{#each photography.faces}}<div class="face"><img src="{{.src}}" alt="{{.alt}}"></div>
+    {{#if photography.library}}<h3>{{photography.library.label}}</h3>
+    <p class="lib-note">{{photography.library.note}}</p>
+    <div class="lib" id="lib">
+      {{#each photography.library.items}}<figure data-n="{{@n}}" title="{{.alt}} — click to copy {{@n}}"><img src="{{.src}}" alt="{{.alt}}" loading="lazy" decoding="async" width="360" height="360"><figcaption>{{@n}}</figcaption></figure>
       {{/each}}
     </div>{{/if}}
     <h3>Style direction</h3>
@@ -33,3 +28,18 @@
       {{#each photography.signatures}}<div class="sig"><b>{{.name}}</b><span>{{.note}}</span></div>
       {{/each}}
     </div>{{/if}}
+
+    <script>
+      /* Click a tile to copy its number — the reference other tools take. */
+      (function () {
+        var lib = document.getElementById('lib');
+        if (!lib) return;
+        lib.addEventListener('click', function (e) {
+          var fig = e.target.closest('figure');
+          if (!fig) return;
+          navigator.clipboard.writeText(fig.dataset.n);
+          fig.classList.add('copied');
+          setTimeout(function () { fig.classList.remove('copied'); }, 700);
+        });
+      })();
+    </script>

@@ -40,7 +40,20 @@ Then, from that HTML:
    Download into `assets/`. If a wordmark exists in only one color, note that the inverse is
    missing rather than recoloring it yourself.
 5. **Photography.** Pull the `<img>` and `og:image` sources that are real photographs, not UI
-   chrome. Save the good ones into `assets/`, keeping each under ~250KB.
+   chrome. These become the **numbered library** (`photography.library.items`) — a contact sheet
+   where each tile is labelled with only its number, so a brief can say "use 12 and 79".
+
+   Deduplicate by content before numbering, since sites serve the same photo at several widths:
+
+   ```bash
+   find . -iname '*.webp' -o -iname '*.jpg' | while read -r f; do
+     printf '%s\t%s\n' "$(md5 -q "$f")" "$f"; done | sort -u -t$'\t' -k1,1
+   ```
+
+   Then write 360px JPEG thumbnails into `assets/library/NNN.jpg` (see `schema.md`), keep the
+   original filename in each item's `file`, and order the grid so the work reads first and
+   portraits last. **The order is a contract** — append only, never reorder, because the numbers
+   are references other projects hold.
 6. **Copy.** `<title>`, the meta description, every `<h1>`/`<h2>`, and the hero paragraph. This is
    your evidence for voice and for claims.
 
@@ -118,6 +131,7 @@ Tell the founder, plainly:
 - Recoloring a logo to manufacture the inverse variant.
 - Committing a licensed font file into the repo.
 - A twenty-swatch palette scraped from every hex in the CSS.
+- Reordering the photo library, which silently invalidates every number anyone has referenced.
 - Claims, stats, or customer names that appear nowhere in their material.
 - Editing the generated HTML instead of the JSON.
 - Declaring WCAG AA without checking the contrast.

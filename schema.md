@@ -116,16 +116,37 @@ One line per chapter for the overview cards: `logo`, `colors`, `typography`, `sp
 
 ## `photography`
 
-Omit the whole section for a brand with no image library.
+Omit the whole section for a brand with no photography of its own.
 
 | field | notes |
 |---|---|
 | `intro` | Chapter summary. |
-| `groups[]` | `{ name, items[] }`, each item `{ src, alt, tag? }`. Three per row. |
-| `faces` / `facesLabel` | Square portrait grid, four per row. |
+| `library` | The numbered contact sheet: `{ label, note, items[] }`, each item `{ src, alt, file? }`. See below. |
 | `style[]` | `{ label, value }` rows: subject, light, treatment, and so on. |
 | `dos[]` / `donts[]` | Short imperatives. |
 | `signatures[]` | `{ name, note }` — recurring devices that belong to this brand. |
+
+### The numbered library
+
+Every photograph the brand owns, in one dense grid, each tile labelled with nothing but its
+number. The number is the brand's shared vocabulary for its own imagery: a brief to another tool
+can say *"use 12 and 79 for that carousel"* and mean something exact. Clicking a tile copies its
+number.
+
+**The number is the position in `items[]`, so the order is a contract.**
+
+- **Append** new photographs at the end. Always safe.
+- **Never reorder or delete** from the middle — every reference to a later number silently shifts
+  to a different photograph. To retire one, leave its entry in place and note it in `alt`.
+- `file` is the original filename, so a full-resolution copy stays traceable back to the source
+  library. The grid itself holds thumbnails; it is an index, not an asset store.
+
+Thumbnails keep the repo light. Around 360px on the long edge at JPEG quality ~55 is plenty for a
+104px tile on a retina screen, and lands near 25KB each:
+
+```bash
+sips -Z 360 -s format jpeg -s formatOptions 55 --out assets/library/001.jpg source.webp
+```
 
 ## `messaging` — required
 

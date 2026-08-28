@@ -78,7 +78,9 @@ pushing anything anywhere.
 
 ```
 brand-book.json        the brand as data — the artifact that matters
-assets/                logos and photography, referenced from the JSON
+assets/                logos and imagery, referenced from the JSON
+  library/NNN.jpg      the numbered photo library — position IS the number,
+                       so append only, never reorder (see schema.md)
 render.mjs             the renderer (zero deps, Node 18+)
 template/
   layout.html          the shell: head, sidebar, pager
